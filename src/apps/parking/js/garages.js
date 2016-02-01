@@ -26,6 +26,14 @@ $(document).ready(function() {
   })
 });
 
+function createSubListItem(str){
+  var item = '<div class="collapsible-body" style="display: none; padding-top: 7px; margin-top: 0px; padding-bottom: 5px; padding-left: 20px; margin-bottom: 0px;">'
+  //var item = '<div class="collapsible-body style="background:white">'
+  item += str;
+  item += '<br></div>';
+  return item;
+}
+
 function displayGarages(garages){
   $('#garages').empty();
 
@@ -38,7 +46,7 @@ function displayGarages(garages){
 function generateListItem(val){
 
   var listItem = '<li>'
-  listItem += '<div class="collapsible-header"><i class="material-icons">place</i>'
+  listItem += '<div class="collapsible-header"><i class="material-icons" >place</i>'
 
   //Add header Here
   listItem += val['friendlyName'];
@@ -59,12 +67,12 @@ function generateListItem(val){
   return listItem
 }
 
-function createSubListItem(str){
-  var item = '<div class="collapsible-body"><p>'
-  item += str;
-  item += '</p></div>';
-  return item;
-}
+//function createSubListItem(str){
+  //var item = '<div class="collapsible-body"><p>'
+  //item += str;
+  //item += '</p></div>';
+  //return item;
+//}
 
 function getHours(hours){
   var listItem = "";
@@ -72,16 +80,16 @@ function getHours(hours){
   var time = ((hours) ? hours['time'] : false)
 
   if( hours.constructor == Array){
-      listItem += '<div class="collapsible-body"><p>Hours of Operation: '
+      listItem += '<div class="collapsible-body" style="display: none; padding-top: 7px; margin-top: 0px; padding-bottom: 5px; padding-left: 20px; margin-bottom: 0px;">Hours of Operation:<br> '
 
       hours.forEach(function(entry){
-        listItem += '<p>'+entry['BEG'] + " to " + entry['END']+ " " + entry['FROM'] ;
+        listItem += ''+entry['BEG'] + " to " + entry['END']+ " " + entry['FROM'] ;
 
         if( entry['TO']){
           listItem += " thru " + entry['TO']
         }
 
-        listItem += "</p>"
+        listItem += "<br>"
       })
 
 
@@ -93,12 +101,6 @@ function getHours(hours){
   return listItem
 }
 
-function createSubListItem(str){
-  var item = '<div class="collapsible-body"><p>'
-  item += str;
-  item += '</p></div>';
-  return item;
-}
 
 function getCosts(costs){
   var listItem = "";
@@ -107,12 +109,11 @@ function getCosts(costs){
   //var time = ((hours) ? costs['time'] : false)
   console.log(costs);
   if( costs.constructor == Array){
-      listItem += '<div class="collapsible-body"><p>Costs: '
-
+      listItem += '<div class="collapsible-body" style="display: none; padding-top: 7px; margin-top: 0px; padding-bottom: 5px; padding-left: 20px; margin-bottom: 0px;">Costs:<br>'
       costs.forEach(function(entry){
         if (entry['BEG'] !== undefined) {
-          listItem += '<p>'+entry['BEG'] + " to " + entry['END'] + " Cost: $" + entry['RATE'] + " per " + entry['RQ'];
-          listItem += "</p>"
+          listItem += ''+entry['BEG'] + " to " + entry['END'] + "&nbsp&nbsp&nbspCost: <b>$" + entry['RATE'] + "</b> " + entry['RQ'];
+          listItem += "<br>"
         }
       })
 
