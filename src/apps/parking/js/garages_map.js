@@ -8,18 +8,19 @@ $(document).ready(function() {
   
     transit.on('child_added', function(snapshot){
       
-      busesRef.child('data').child(snapshot.key()).on('value', busUpdated);
-      //console.log("Added A child", snapshot.key());
+      //busesRef.child('data').child(snapshot.key()).on('value', busUpdated);
+      transit.child(snapshot.key()).on('value', busUpdated);
+      console.log("Added A child", snapshot.key());
     })
     
     transit.off('child_removed', function(snapshot){
-      busesRef.child('data').child(snapshot.key()).off('value', busUpdated);
+      transit.child(snapshot.key()).off('value', busUpdated);
       console.log("Bus removed", snapshot.val())
     })
     
     function busUpdated(snapshot) {
        // Bus line 'X' changed location.
-      console.log("Bus changed values", snapshot.key());
+      //console.log("Bus changed values", snapshot.key(), snapshot.val());
       mapBuses(snapshot.val());
     }
 
@@ -33,10 +34,6 @@ $(document).ready(function() {
 
         drawGarages(garages);
     });
-
-    function showBus(bus) {
-        mapBuses(bus)
-    }
 
     function mapBuses(bus) {
         try {
