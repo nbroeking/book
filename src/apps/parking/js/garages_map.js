@@ -56,7 +56,7 @@ $(document).ready(function() {
         return clearIcon;
     }
     var clearIcon = new Icon({
-        iconUrl: 'images/banner.png'
+        iconUrl: 'images/bus.png'
     });
     var attributionText = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
 
@@ -185,19 +185,18 @@ $(document).ready(function() {
     var customerLayerGroup = L.layerGroup()
     customerLayerGroup.addTo(map)
 
-    function showCustomer(customer) {
-        mapCustomer(customer)
+    function showCustomer(customer, name) {
+        mapCustomer(customer, name)
     }
 
-    function mapCustomer(customer) {
+    function mapCustomer(customer, name) {
         try {
             //console.log('mapCity', city)
             var latlng = [customer.lat, customer.lon]
-
-
+            console.log(customer.__name__)
             L.marker(latlng, {
                 icon: getPNG(customer)
-            }).addTo(customerLayerGroup).bindPopup(customer.name);
+            }).bindLabel(name, { noHide: true }).addTo(customerLayerGroup).showLabel();
         } catch (err) {
             console.error("err", err)
         }
@@ -221,11 +220,21 @@ $(document).ready(function() {
     var ref = new Firebase('https://ucdd2teamtwo.firebaseio.com/')
         // read data from the location bio/tasks, only once
     ref.child('customers').on('value', function(snapshot) {
-        customerLayerGroup.clearLayers()
-        snapshot.forEach(function(snapshot) {
-            customer = snapshot.val()
-            showCustomer(customer)
-        });
+              customerLayerGroup.clearLayers()
+        // snapshot.forEach(function(snapshot) {
+        //     customer = snapshot.val()
+        //     showCustomer(customer)
+        // });
+
+        customers = snapshot.val()
+        for (key in customers){
+            showCustomer(customers[key], key)
+        }
+        //customerLayerGroup.clearLayers()
+        //snapshot.forEach(function(snapshot) {
+            //customer = snapshot.val()
+            //showCustomer(customer)
+        //});
     });
 
 
