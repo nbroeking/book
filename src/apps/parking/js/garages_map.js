@@ -41,18 +41,20 @@ $(document).ready(function() {
     function mapBuses(key, bus) {
         try {
           
+          var latlng = [bus.lat, bus.lon]
           if( markers[key] == undefined){
-            markser[key] = //Create A new marker
-          }
             
-            var marker = markers[key];
-            
-            //Add to map
-            //console.log('mapCity', city)
-            var latlng = [bus.lat, bus.lon]
-            L.marker(latlng, {
+            markers[key] = L.marker(latlng, {
                 icon: getBusPNG(bus)
-            }).addTo(busLayerGroup).bindPopup(bus.name);
+            }) 
+            
+            markers[key].addTo(busLayerGroup).bindPopup(bus.name);
+          }else{
+            var marker = markers[key];
+            marker.setLatLong([bus.lat, bus.long])
+      
+          }
+          
         } catch (err) {
             console.error("err", err)
         }
