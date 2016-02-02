@@ -3,9 +3,11 @@ $(document).ready(function() {
     var data;
 
     var busesRef = new Firebase('https://publicdata-transit.firebaseio.com/sf-muni');
-
-    // var transitRef = new Firebase('https://publicdata-transit.firebaseio.com/sf_muni');
-    // var lineIndex = transitRef.child('index').child(transitLine);
+  
+    busesRef.child('sf-muni/vehicles').on('value', function(snapshot){
+      
+      console.log("Updated Buses", snapshot);
+    })
     //   lineIndex.on('child_added', function(snapshot) {
     //   var id = snapshot.key();
     //   transitRef.child('data').child(id).on('value', busUpdated);
