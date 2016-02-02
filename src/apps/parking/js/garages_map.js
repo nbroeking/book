@@ -23,11 +23,8 @@ $(document).ready(function() {
     })
     
     function busUpdated(snapshot) {
-      
       buses[snapshot.key()] = snapshot.val();
-      
       updateBuses();
-    
     }
 
     function updateBuses(){
