@@ -53,7 +53,7 @@ $(document).ready(function() {
                 icon: getBusPNG(bus)
             }) 
             
-            markers[key].addTo(busLayerGroup).bindPopup('<p>Bus:' + key + '</p>');
+            markers[key].addTo(busLayerGroup).bindPopup('Route - ' + bus.routeTag);
           }else{
             var marker = markers[key];
             marker.setLatLng(latlng)
