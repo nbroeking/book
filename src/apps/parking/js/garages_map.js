@@ -51,8 +51,7 @@ $(document).ready(function() {
             markers[key].addTo(busLayerGroup).bindPopup(bus.name);
           }else{
             var marker = markers[key];
-            marker.setLatLong([bus.lat, bus.long])
-      
+            marker.setLatLng(latlng)
           }
           
         } catch (err) {
