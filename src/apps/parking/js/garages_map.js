@@ -24,7 +24,6 @@ $(document).ready(function() {
     function busUpdated(snapshot) {
        // Bus line 'X' changed location.
       console.log("Bus changed values", snapshot.key());
-      
        // Retrieve lat/longitude with info.lat/info.lon.
     }
 
@@ -64,7 +63,7 @@ $(document).ready(function() {
         return clearIcon;
     }
     var clearIcon = new Icon({
-        iconUrl: 'images/banner.png'
+        iconUrl: 'images/bus.png'
     });
     var attributionText = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
 
