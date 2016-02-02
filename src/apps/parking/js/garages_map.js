@@ -18,13 +18,18 @@ $(document).ready(function() {
     transit.off('child_removed', function(snapshot){
       transit.child(snapshot.key()).off('value', busUpdated);
       console.log("Bus removed", snapshot.val())
-      delete buses[snapshot.key()];
       //updateBuses();
     })
     
     function busUpdated(snapshot) {
       //buses[snapshot.key()] = snapshot.val();
-      mapBuses( snapshot.key(), snapshot.val());
+      
+      if( snapshot.val() != null){
+        mapBuses( snapshot.key(), snapshot.val()); 
+      }
+      else{
+        console.log("Snapshot has a null val", snapshot.val(), snapshot.key());
+      }
     }
   
     // read data from the location san_francisco/garages
@@ -64,7 +69,7 @@ $(document).ready(function() {
     }
     var busIcon = L.icon({
         iconUrl: 'images/bus.png',
-        iconSize: [10, 10]
+        iconSize: [15, 15]
     });
     var attributionText = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
 
@@ -204,7 +209,7 @@ $(document).ready(function() {
         try {
             //console.log('mapCity', city)
             var latlng = [customer.lat, customer.lon]
-            console.log(customer.__name__)
+            //console.log(customer.__name__)
             L.marker(latlng, {
                 icon: getPNG(customer)
             }).bindLabel(name, { noHide: true }).addTo(customerLayerGroup).showLabel();
