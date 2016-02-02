@@ -2,12 +2,16 @@ $(document).ready(function() {
     var ref = new Firebase('https://publicdata-parking.firebaseio.com');
     var data;
 
-    var busesRef = new Firebase('https://publicdata-transit.firebaseio.com/sf-muni');
+    var busesRef = new Firebase('https://publicdata-transit.firebaseio.com');
   
-    busesRef.child('sf-muni/vehicles').on('value', function(snapshot){
+    var transit = busesRef.child('sf-muni/vehicles');
+    transit.on('child_added', function(snapshot){
       
-      console.log("Updated Buses", snapshot);
+      busesRef.child('data').child(snapshot.key()).on('value', busUpdated);
+      //console.log("Added A child", snapshot.key());
     })
+    
+    
     //   lineIndex.on('child_added', function(snapshot) {
     //   var id = snapshot.key();
     //   transitRef.child('data').child(id).on('value', busUpdated);
@@ -17,11 +21,12 @@ $(document).ready(function() {
     //   transitRef.child('data').child(id).off('value', busUpdated);
     // });
 
-    // function busUpdated(snapshot) {
-    //   // Bus line 'X' changed location.
-    //   var info = snapshot.val();
-    //   // Retrieve lat/longitude with info.lat/info.lon.
-    // }
+    function busUpdated(snapshot) {
+       // Bus line 'X' changed location.
+      console.log("Bus changed values", snapshot.key());
+      
+       // Retrieve lat/longitude with info.lat/info.lon.
+    }
 
     // read data from the location san_francisco/garages
     ref.child('san_francisco/garages').on('value', function(snapshot) {
