@@ -23,6 +23,9 @@ $(document).ready(function() {
     })
     
     function busUpdated(snapshot) {
+       // Bus line 'X' changed location.
+      //console.log("Bus changed values", snapshot.key(), snapshot.val());
+      //mapBuses(snapshot.val());
       buses[snapshot.key()] = snapshot.val();
       updateBuses();
     }
@@ -58,14 +61,11 @@ $(document).ready(function() {
             console.error("err", err)
         }
     }
-  
-    var busLayerGroup = L.layerGroup()
-    busLayerGroup.addTo(map)
 
     function getBusPNG(bus) {
         return clearIcon;
     }
-    var clearIcon = new Icon({
+    var clearIcon = L.icon({
         iconUrl: 'images/bus.png'
     });
     var attributionText = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
@@ -83,6 +83,9 @@ $(document).ready(function() {
     var markersLayerGroup = L.layerGroup();
     // add the makers layer group to the map
     markersLayerGroup.addTo(map);
+    
+    var busLayerGroup = L.layerGroup();
+    busLayerGroup.addTo(map);
 
     var info = L.control();
 
