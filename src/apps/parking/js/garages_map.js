@@ -3,11 +3,9 @@ $(document).ready(function() {
     var data;
 
     var busesRef = new Firebase('https://publicdata-transit.firebaseio.com/sf-muni');
-  
-    busesRef.child('sf-muni/vehicles').on('value', function(snapshot){
-      
-      console.log("Updated Buses", snapshot);
-    })
+
+    // var transitRef = new Firebase('https://publicdata-transit.firebaseio.com/sf_muni');
+    // var lineIndex = transitRef.child('index').child(transitLine);
     //   lineIndex.on('child_added', function(snapshot) {
     //   var id = snapshot.key();
     //   transitRef.child('data').child(id).on('value', busUpdated);
@@ -34,6 +32,33 @@ $(document).ready(function() {
         drawGarages(garages);
     });
 
+
+
+
+    function showBus(bus) {
+        mapBuses(bus)
+    }
+
+    function mapBuses(bus) {
+        try {
+            //console.log('mapCity', city)
+            var latlng = [bus.lat, bus.lon]
+            L.marker(latlng, {
+                icon: getBusPNG(bus)
+            }).addTo(busLayerGroup).bindPopup(bus.name);
+        } catch (err) {
+            console.error("err", err)
+        }
+    }
+    var busLayerGroup = L.layerGroup()
+    busLayerGroup.addTo(map)
+
+    function getBusPNG(bus) {
+        return clearIcon;
+    }
+    var clearIcon = new Icon({
+        iconUrl: 'images/banner.png'
+    });
     var attributionText = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
 
     // create the map
@@ -197,7 +222,7 @@ $(document).ready(function() {
     var ref = new Firebase('https://ucdd2teamtwo.firebaseio.com/')
         // read data from the location bio/tasks, only once
     ref.child('customers').on('value', function(snapshot) {
-              customerLayerGroup.clearLayers()
+        customerLayerGroup.clearLayers()
         snapshot.forEach(function(snapshot) {
             customer = snapshot.val()
             showCustomer(customer)
