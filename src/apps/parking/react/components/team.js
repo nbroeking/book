@@ -11,7 +11,7 @@ MyComponents.Team = React.createClass({
       return ( <li key={i} className="collection-item">
               <PersonChip name={member.name} image={member.image} href={member.github} />
             </li> );
-    })
+    });
 
     return (
       <div className="card">

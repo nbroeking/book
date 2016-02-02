@@ -14,6 +14,7 @@
     <script src="lib/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
   </head>
   <body>
     <div id="navbar"></div>
@@ -67,10 +68,17 @@
         .success(function(garages) {
 
           console.log('garages:', garages)
-          ReactDOM.render(
-            <MyComponents.Garage garage={garages[GARAGE_NAME]}/>,
+          /*for (var key in garages) {
+            console.log(garages[key])
+            ReactDOM.render(
+              <MyComponents.Garage garage={garages[GARAGE_NAME]}/>,
+              $('#garage').get(0)
+            );
+          }*/
+          ReactDOM.render(<MyComponents.Garage garages={garages}/>,
             $('#garage').get(0)
-          )
+          );
+          
 
         });
 
