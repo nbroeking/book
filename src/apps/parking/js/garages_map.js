@@ -1,8 +1,9 @@
 $(document).ready(function() {
     var ref = new Firebase('https://publicdata-parking.firebaseio.com');
     var data;
-    var buses = {};
-
+  
+    var markers = {};
+  
     var busesRef = new Firebase('https://publicdata-transit.firebaseio.com');
   
     var transit = busesRef.child('sf-muni/vehicles');
@@ -12,33 +13,20 @@ $(document).ready(function() {
       //busesRef.child('data').child(snapshot.key()).on('value', busUpdated);
       transit.child(snapshot.key()).on('value', busUpdated);
       //console.log("Added A child", snapshot.key());
-      updateBuses();
     })
     
     transit.off('child_removed', function(snapshot){
       transit.child(snapshot.key()).off('value', busUpdated);
       console.log("Bus removed", snapshot.val())
       delete buses[snapshot.key()];
-      updateBuses();
+      //updateBuses();
     })
     
     function busUpdated(snapshot) {
-       // Bus line 'X' changed location.
-      //console.log("Bus changed values", snapshot.key(), snapshot.val());
-      //mapBuses(snapshot.val());
-      buses[snapshot.key()] = snapshot.val();
-      updateBuses();
+      //buses[snapshot.key()] = snapshot.val();
+      mapBuses( snapshot.key(), snapshot.val());
     }
-
-    function updateBuses(){
-        //TODO: CLear Bus layer
-       
-      for (var key in buses) {
-        if (buses.hasOwnProperty(key)) {
-          mapBuses(buses[key]);
-        }
-      }
-    }
+  
     // read data from the location san_francisco/garages
     ref.child('san_francisco/garages').on('value', function(snapshot) {
         data = snapshot.val();
@@ -50,8 +38,16 @@ $(document).ready(function() {
         drawGarages(garages);
     });
 
-    function mapBuses(bus) {
+    function mapBuses(key, bus) {
         try {
+          
+          if( markers[key] == undefined){
+            markser[key] = //Create A new marker
+          }
+            
+            var marker = markers[key];
+            
+            //Add to map
             //console.log('mapCity', city)
             var latlng = [bus.lat, bus.lon]
             L.marker(latlng, {
