@@ -5,27 +5,22 @@ $(document).ready(function() {
     var busesRef = new Firebase('https://publicdata-transit.firebaseio.com');
   
     var transit = busesRef.child('sf-muni/vehicles');
+  
     transit.on('child_added', function(snapshot){
       
       busesRef.child('data').child(snapshot.key()).on('value', busUpdated);
       //console.log("Added A child", snapshot.key());
     })
     
+    transit.off('child_removed', function(snapshot){
+      busesRef.child('data').child(snapshot.key()).off('value', busUpdated);
+      console.log("Bus removed", snapshot.val())
+    })
     
-    //   lineIndex.on('child_added', function(snapshot) {
-    //   var id = snapshot.key();
-    //   transitRef.child('data').child(id).on('value', busUpdated);
-    // });
-    // lineIndex.on('child_removed', function(snapshot) {
-    //   var id = snapshot.key();
-    //   transitRef.child('data').child(id).off('value', busUpdated);
-    // });
-
     function busUpdated(snapshot) {
        // Bus line 'X' changed location.
       console.log("Bus changed values", snapshot.key());
-      
-       // Retrieve lat/longitude with info.lat/info.lon.
+      mapBuses(snapshot.val());
     }
 
     // read data from the location san_francisco/garages
@@ -38,9 +33,6 @@ $(document).ready(function() {
 
         drawGarages(garages);
     });
-
-
-
 
     function showBus(bus) {
         mapBuses(bus)
