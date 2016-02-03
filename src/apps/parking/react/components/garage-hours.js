@@ -14,8 +14,7 @@ MyComponents.Hour = React.createClass({
 
 MyComponents.GarageHours = React.createClass({
   render: function() {
-
-    var hours = this.props.hours.map(function(h,i){
+    var hours = Object.keys(this.props.hours).map(function(h,i){
       return <MyComponents.Hour hour={h} key={i}/>
     })
 
