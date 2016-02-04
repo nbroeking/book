@@ -65,9 +65,9 @@ Sunday @ 11:59pm, 2/7/2016
   * [x] Major or degree information
   * [x] Github link  
 * [x] The [_Skill List_](/apps/resume/react/components/skill-list.js) component should be fully implemented.
-* [ ] The [_Task List_](/apps/resume/react/components/task-list.js) component should be fully implemented.
-* [ ] The [_City List_](/apps/resume/react/components/city-list.js) component should be fully implemented.
-* [ ] Data used to populate the skill list, task list, and city list should come from
+* [x] The [_Task List_](/apps/resume/react/components/task-list.js) component should be fully implemented.
+* [x] The [_City List_](/apps/resume/react/components/city-list.js) component should be fully implemented.
+* [x] Data used to populate the skill list, task list, and city list should come from
 appropriate Firebase locations.
 
 ### Submission
