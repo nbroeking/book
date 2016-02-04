@@ -14,6 +14,8 @@ MyComponents.Rate = React.createClass({
 
 MyComponents.GarageRates = React.createClass({
   render: function() {
+    
+    console.log("Rates", this.props.rates)
     var rates = this.props.rates.map(function(r,i){
       return <MyComponents.Rate rate={r} key={i}/>
     });

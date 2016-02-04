@@ -18,13 +18,11 @@ MyComponents.GarageHours = React.createClass({
     
     var hours;
     try{
-    
       hours = this.props.hours.map(function(h,i){
         return <MyComponents.Hour hour={h} key={i}/>
       })
     }
     catch(err){
-      console.log("Error", err, this.props.hours)
       hours = [ <MyComponents.Hour hour={this.props.hours} key={0} /> ]
       //hours = Object.keys(this.props.hours).map(function(h,i){
         //return <MyComponents.Hour hour={this.props.hours} key={i}/>
