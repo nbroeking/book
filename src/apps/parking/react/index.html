@@ -60,20 +60,10 @@
         $('#team').get(0)
       );
 
-      var garage = {name: 'something'}
-
       // make a jQuery call to load the garages data
       $.ajax({url:'garages.snapshot.json'})
         .success(function(garages) {
 
-          console.log('garages:', garages)
-          /*for (var key in garages) {
-            console.log(garages[key])
-            ReactDOM.render(
-              <MyComponents.Garage garage={garages[GARAGE_NAME]}/>,
-              $('#garage').get(0)
-            );
-          }*/
           ReactDOM.render(<MyComponents.Garage garages={garages}/>,
             $('#garage').get(0)
           );

@@ -18,9 +18,11 @@ MyComponents.GarageRates = React.createClass({
       return <MyComponents.Rate rate={r} key={i}/>
     });
     return (
-      <div className="card">
-        <div className="card-content">
-          { rates }
+      <div className="card black lighten">
+        <div className="card-content white-text">
+          <span className="card-title">Rates</span>
+          <ul className="collection black-text">
+          </ul>
         </div>
       </div>
     );

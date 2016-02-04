@@ -26,6 +26,7 @@ MyComponents.Garage = React.createClass({
 
 var GarageCard = React.createClass({
   render: function() {
+    
     return (
       <div className="card light-blue lighten-4">
         <div className="card-image waves-effect waves-block waves-light">
@@ -38,8 +39,6 @@ var GarageCard = React.createClass({
         <div className="card-reveal">
           <MyComponents.GarageTitle
             title={this.props.garage.friendlyName} icon="close"/>
-        TODO: This is a component about a garage whose
-        raw data is {JSON.stringify(this.props.garage)}
           <MyComponents.GarageSpaces
             open={this.props.garage.open_spaces}
             total={this.props.garage.total_spaces}/>
