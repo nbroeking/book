@@ -34,7 +34,7 @@ var GarageCard = React.createClass({
         </div>
         <div className="card-content">
           <MyComponents.GarageTitle
-            title={this.props.garage.friendlyName} icon="more-vert"/>
+            title={this.props.garage.friendlyName} icon="list"/>
         </div>
         <div className="card-reveal">
           <MyComponents.GarageTitle
