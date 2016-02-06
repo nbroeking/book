@@ -37,7 +37,7 @@ Friday @ 11:59pm, 2/4/2016
 * [x] The [_Garage_](/apps/parking/react/components/garage.js) component should be fully implemented.
   * [x] The [_Garage Title_](/apps/parking/react/components/garage-title.js) component should be fully implemented.
   * [x] The [_Garage Spaces_](/apps/parking/react/components/garage-spaces.js) component should be fully implemented.
-  * [ ] The [_Garage Rates_](/apps/parking/react/components/garage-rates.js) component should be fully implemented.
+  * [x] The [_Garage Rates_](/apps/parking/react/components/garage-rates.js) component should be fully implemented.
   * [x] The [_Garage Hours_](/apps/parking/react/components/garage-hours.js) component should be fully implemented.
 * [x] The app should be reasonably pretty, as close to the styling / design of your team's original garage app as possible.
 
