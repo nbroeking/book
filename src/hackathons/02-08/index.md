@@ -22,13 +22,26 @@ for their contributions during the past two weeks.  Say hello to your new teamma
 Time: 30 minutes
 
 * What is the name of your startup?
+	* Revolver
 * What services does your startup provide?
+	* Food Delivery
 * Who can use the services?
+	* Anybody	 
 * Who can join as the service providers?
-* What are the main data attributes of a service provider (e.g., name, stars, location)?
+	* Any Restaurnt  
+* What are the main data attributes of a service 
+provider (e.g., name, stars, location)?
+	* Name
+	* Starts
+	* Location
+	* Type
+	* Delivery Time
 * Which city will your startup initially launch?
+	* Boulder	 
 * What is the price for a customer to pay for a service? What are the factors determining the price?
+	* Price of food for customer + $5.00 deliver 
 * How much can a service provider earn?
+	* Price of Food for customer
 
 ## Mockup
 
