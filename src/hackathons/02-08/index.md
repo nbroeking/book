@@ -4,7 +4,7 @@ layout: layout.hbs
 
 Date: 02-08-2016
 
-# Hackathon: Uber for ????
+# Hackathon: Uber for Revolver
 
 ## Objective
 
