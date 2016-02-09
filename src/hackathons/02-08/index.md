@@ -81,9 +81,9 @@ software to add markups to the screenshot. Simply include the screenshot in your
 
 * Deploy to Firebase. Your mockups should be publicly visible via the following
 links
-  * `<Your Firbase>`[/apps/uber/mockup/](/apps/uber/mockup/index.html)
-  * `<Your Firbase>`[/apps/uber/mockup/client.html](/apps/uber/mockup/client.html)
-  * `<Your Firbase>`[/apps/uber/mockup/admin.html](/apps/uber/mockup/admin.html)
+  * `<Your Firbase>`[https://team-revolver.firebaseapp.com/apps/uber/mockup/](https://team-revolver.firebaseapp.com/apps/uber/mockup/)
+  * `<Your Firbase>`[https://team-revolver.firebaseapp.com/apps/uber/mockup/client.html](https://team-revolver.firebaseapp.com/apps/uber/mockup/client.html)
+  * `<Your Firbase>`[https://team-revolver.firebaseapp.com/apps/uber/mockup/admin.html](https://team-revolver.firebaseapp.com/apps/uber/mockup/admin.html)
 * Use [http://recordit.co/](http://recordit.co/) to create a demo as an animated
 gif. Post it to [#demo](https://ucdd2016.slack.com/messages/demo/) and together
 with your team members' names.
