@@ -53,7 +53,7 @@ Create a high-fidelity mockup of your app. Your app should have three components
 
 [/apps/uber/mockup/](/apps/uber/mockup/index.html)
 
-* [ ] Contains your team's answers to the questions under Ideation.
+* [X] Contains your team's answers to the questions under Ideation.
 * [ ] Contains links to the client page and the admin page.
 
 ### Client
