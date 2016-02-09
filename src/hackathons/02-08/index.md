@@ -63,7 +63,7 @@ Create a high-fidelity mockup of your app. Your app should have three components
 * [ ] A client can see where service providers are on a map
 * [ ] A client can see where he/she is on a map
 * [ ] A client can see details about a provider
-* [ ] A client can login and logout
+* [X] A client can login and logout
 
 ### Admin
 
