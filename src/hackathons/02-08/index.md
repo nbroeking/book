@@ -69,8 +69,8 @@ Create a high-fidelity mockup of your app. Your app should have three components
 
 [/apps/uber/mockup/admin.html](/apps/uber/mockup/admin.html)
 
-* [ ] An admin can see all the service providers
-* [ ] An admin can see all the clients
+* [X] An admin can see all the service providers
+* [X] An admin can see all the clients
 
 ## Tools
 * For non-map components, use [materializecss](http://materializecss.com/).
