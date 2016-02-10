@@ -38,17 +38,29 @@ function simulate(){
 
 function enter(person){
   console.log('enter', person)
-  // TODO: put this person in the Firebase
-  // var ref = new Firebase('your-firebase-url')
-  // ...
+  var ref = new Firebase("https://team-revolver.firebaseio.com/");
+  var usersRef = ref.child("providers");
+  usersRef.child(person.name).set({
+    duration: person.duration,
+    lat: person.lat,
+    lon: person.lon
+    });
 }
 
 function leave(person){
-  console.log('leave', person)
-  // TODO: remove this person from the Firebase
-  // var ref = new Firebase('your-firebase-url')
-  // ...
+  console.log('leave', person)  
+  var ref = new Firebase("https://team-revolver.firebaseio.com/providers/"+person.name);
+  ref.remove();
 }
+
+function clear(){
+  console.log('leave', person)  
+  var ref = new Firebase("https://team-revolver.firebaseio.com/providers/");
+  ref.remove();
+}
+
+//This is so we always start fresh
+clear();
 
 // run each second
 setInterval(simulate, 2000)
