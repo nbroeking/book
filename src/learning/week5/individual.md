@@ -48,8 +48,4 @@ at the same time to _do something together_ in real-time.
 
 Next week, we will collect ideas from all students and put similar ideas together.
 People with similar ideas will be grouped together to further refine the their
-<<<<<<< HEAD
 ideas into a single idea, which will become a proposal for the next app.
-=======
-ideas into a single idea, which will become a proposal for the next app.
->>>>>>> refs/remotes/ucdd2016/master
