@@ -1,18 +1,32 @@
 class NavBar extends React.Component {
 
   render(){
-    return (
+    console.log("React is broken not in the navbar")
+    if( this.props.user){
+      return (
       <nav>
-        <div className="nav-wrapper">
-        <a href="#" className="brand-logo">TODO</a>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li><a href="todo.html">TODO</a></li>
-          <li><a href="todo.html">TODO</a></li>          
-        </ul>
+        <div className="nav-wrapper black">
+          <a href="#" className="brand-logo">Revolver</a>
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <MyComponents.NavBar actions={this.props.actions}/> 
+            <li><a href="#" onClick={this.props.logoutAction}>Logout</a></li>
+          </ul>
         </div>
       </nav>
-    );
+      );
+    }
+    else{
+      return (
+        <nav>
+          <div className="nav-wrapper black">
+            <a href="#" className="brand-logo">Revolver</a>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <MyComponents.NavBar actions={this.props.actions}/> 
+            </ul>
+        </div>
+      </nav>
+      );
+    }
   }
-
 }
 MyComponents.NavBar = NavBar
