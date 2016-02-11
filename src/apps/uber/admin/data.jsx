@@ -24,7 +24,7 @@ function render(){
 // DATA
 //
 
-var firebaseRef = new Firebase('https://ucdd2-book.firebaseio.com/uber')
+var firebaseRef = new Firebase('https://team-revolver.firebaseio.com')
 
 // Real-time Data (load constantly on changes)
 firebaseRef.child('users')
