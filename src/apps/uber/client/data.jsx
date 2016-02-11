@@ -27,14 +27,14 @@ function render(){
 var firebaseRef = new Firebase('https://ucdd2-book.firebaseio.com/uber')
 
 // Real-time Data (load constantly on changes)
-firebaseRef.child('providers')
+/*firebaseRef.child('providers')
   .on('value', function(snapshot){
 
     data.providers = _.values(snapshot.val())
 
     render()
 
-  })
+  })*/
 
 //
 // ACTIONS
@@ -68,9 +68,10 @@ actions.login = function(){
         username: authData.github.username,
         id: authData.github.id,
         status: 'online',
-        pos: data.center  // position, default to the map center
+        pos: data.center,  // position, default to the map center
+        imgURL: authData.github.profileImageURL
       }
-
+      
       var userRef = firebaseRef.child('users').child(user.username)
 
       // subscribe to the user data
@@ -78,7 +79,7 @@ actions.login = function(){
         data.user = snapshot.val()
         render()
       })
-
+      
       // set the user data
       userRef.set(user)
 
@@ -110,3 +111,5 @@ actions.logout = function(){
   }
 
 }
+
+render();

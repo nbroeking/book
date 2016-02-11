@@ -4,17 +4,16 @@ class User extends React.Component {
 
     if (this.props.user){
       // user is authenticated
-      return
-        <li>
+      return(
           <div className="chip blue">
-            <a className="white-text" href="#">{this.props.name}</a>
-          </div>
-        </li>
+            <img src={this.props.user.profileImageURL} />
+            <a className="white-text" href="#">{this.props.user.username}</a>
+          </div>)
     } else {
       // user is not set
-      return <li>
+      return( <li>
         <a href="#" onClick={this.props.loginAction}>Login via Github</a>
-      </li>
+      </li>)
     }
   }
 
