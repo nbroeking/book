@@ -27,14 +27,14 @@ function render(){
 var firebaseRef = new Firebase('https://team-revolver.firebaseio.com')
 
 // Real-time Data (load constantly on changes)
-/*firebaseRef.child('providers')
+firebaseRef.child('providers')
   .on('value', function(snapshot){
 
     data.providers = _.values(snapshot.val())
 
     render()
 
-  })*/
+  })
 
 //
 // ACTIONS
@@ -76,6 +76,7 @@ actions.login = function(){
 
       // subscribe to the user data
       userRef.on('value', function(snapshot){
+        console.log("user Changed");
         data.user = snapshot.val()
         render()
       })
@@ -90,8 +91,9 @@ actions.login = function(){
 
 actions.logout = function(){
 
-  if (data.user){
 
+  if (data.user){
+    console.log("Logout");
     firebaseRef.unauth()
 
     var userRef = firebaseRef
