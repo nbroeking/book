@@ -53,8 +53,7 @@ function leave(person){
   ref.remove();
 }
 
-function clear(){
-  console.log('leave', person)  
+function clear(){ 
   var ref = new Firebase("https://team-revolver.firebaseio.com/providers/");
   ref.remove();
 }
