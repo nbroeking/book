@@ -1,7 +1,7 @@
 class ProviderMap extends React.Component {
   render(){
     return <div>
-      <div>ToDo: ToDo: Show All Providers on a Map
+      <div><h1>Implemented on users-map</h1>
         <pre>{JSON.stringify(this.props.users)}</pre>
       </div>
     </div>

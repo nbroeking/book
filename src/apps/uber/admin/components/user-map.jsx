@@ -2,12 +2,35 @@ const {Map, Marker, CircleMarker, Popup, TileLayer, MapLayer}  = window.ReactLea
 
 class UserMap extends React.Component {
   render(){
+    const clients = this.props.users
+    var client_icon = L.icon({
+      iconUrl: 'img/client_icon.png',
+      iconSize: [40, 40],
+      iconAnchor: [0, 40],
+      popupAnchor: [-3, -76]
+    })
+    const userElements = _.map(clients, function(u,i){
+      
+      var pos = [u.pos[0], u.pos[1]];
+      return <Marker position={pos} key={i} icon={client_icon}>
+        <Popup>
+          <span>{JSON.stringify(u)}</span>
+        </Popup>
+      </Marker>
+    })
 
     const providers = this.props.providers
-    const providerElements = _.map(providers, function(p,i){
+    //console.log('providers: ', providers)
+    var provider_icon = L.icon({
+      iconUrl: 'img/provider_icon.png',
+      iconSize: [40, 40],
+      iconAnchor: [0, 40],
+      popupAnchor: [-3, -76]
+    })
+    const providerElements = _.map(providers, function(p,j){
       
       var pos = [p.lat, p.lon];
-      return <Marker position={pos} key={i}>
+      return <Marker position={pos} key={j} icon={provider_icon}>
         <Popup>
           <span>{JSON.stringify(p)}</span>
         </Popup>
@@ -24,6 +47,7 @@ class UserMap extends React.Component {
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
+        {userElements}
         {providerElements}
       </Map>
   }
