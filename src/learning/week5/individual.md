@@ -33,7 +33,7 @@ number of pages you think is necessary to illustrate your idea.
 
 ## Submission
 
-* Deploy to Firebase. Your mockups should be publicly visible via `<Your Firbase>`[/apps/together/mockup/](/apps/together/mockup/index.html)
+* Deploy to Firebase. Your mockups should be publicly visible via Firebase[/apps/together/mockup/](/apps/together/mockup/index.html)
 * The answers to your ideation questions must be included in the mockup's
 index page.
 * Use [http://recordit.co/](http://recordit.co/) to create a demo as an animated
