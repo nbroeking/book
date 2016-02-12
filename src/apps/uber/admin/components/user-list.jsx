@@ -11,7 +11,7 @@ class UserList extends React.Component {
             <img className="activator" height="50" src={user.imgURL}></img>{'  ' + user.username}<i className="material-icons right">more_vert</i>
           </span>
 		      <li><a className="white"><b>Status:  </b>{user.status}</a></li>
-		      <li><a className="white"><b>Location: </b> Latitude: {user.pos[0]} Longitude: {user.pos[1]}</a></li>
+		      <li><a className="white"><b>Location: </b> <br></br>Latitude: {user.pos[0]} <br></br>Longitude: {user.pos[1]}</a></li>
         </div>
 	    </div>
 	  </div>
