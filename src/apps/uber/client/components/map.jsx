@@ -5,6 +5,13 @@ class MapView extends React.Component {
   render(){
 
     const providers = this.props.providers
+    var provider_icon = L.icon({
+      iconUrl: 'img/provider_icon.png',
+      iconSize: [40, 40],
+      iconAnchor: [0, 40],
+      popupAnchor: [-3, -76]
+    })
+
     const providerElements = _.map(providers, function(p,i){
       
       var pos = [p.lat, p.lon];
@@ -15,12 +22,6 @@ class MapView extends React.Component {
       </Marker>
     })
 
-    let userElement
-    if (this.props.user){
-      userElement = <CircleMarker center={this.props.user.pos}/>
-    } else {
-      userElement = ''
-    }
 
     // Note: .bind(this) is important for the handler function's 'this'
     // pointer to refer to this MapView instance
