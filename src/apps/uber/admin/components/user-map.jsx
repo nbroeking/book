@@ -14,7 +14,7 @@ class UserMap extends React.Component {
       var pos = [u.pos[0], u.pos[1]];
       return <Marker position={pos} key={i} icon={client_icon}>
         <Popup>
-          <span>{JSON.stringify(u)}</span>
+          <span>{u.username}</span>
         </Popup>
       </Marker>
     })
@@ -32,7 +32,7 @@ class UserMap extends React.Component {
       var pos = [p.lat, p.lon];
       return <Marker position={pos} key={j} icon={provider_icon}>
         <Popup>
-          <span>{JSON.stringify(p)}</span>
+          <span>{p.name}</span>
         </Popup>
       </Marker>
     })
