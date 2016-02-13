@@ -13,10 +13,14 @@ class App extends React.Component {
           <div className="collection">
             <div className="card">
               <div className="collection">
-              <MyComponents.User
-                user={this.props.data.user}
-                loginAction={this.props.actions.login}
-                logoutAction={this.props.actions.logout}/>
+              <row>
+                <div className="col s6">
+                  <MyComponents.User
+                    user={this.props.data.user}
+                    loginAction={this.props.actions.login}
+                    logoutAction={this.props.actions.logout}/>
+                </div>
+              </row>
             </div>
             </div>
             <div className="card">

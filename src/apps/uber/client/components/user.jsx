@@ -2,7 +2,6 @@ class User extends React.Component {
   render(){
     var user = this.props.user;
 	
-    console.log("User", user);
     if( !user){
       return(<div></div>);
     }
