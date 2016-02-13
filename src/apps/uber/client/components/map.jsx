@@ -34,7 +34,6 @@ class MapView extends React.Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         {providerElements}
-        {userElement}
       </Map>
   }
 
