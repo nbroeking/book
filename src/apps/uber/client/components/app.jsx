@@ -1,9 +1,14 @@
 class App extends React.Component {
   render(){
+	   var providerElements = this.props.data.providers.map(function(p,i){
+      return <MyComponents.ProviderList provider={p} key={i}/>
+    })
     return (
       <div>
         <MyComponents.NavBar data={this.props.data} actions={this.props.actions}/>
         <div className="container">
+        
+    
           <div className="collection">
             <div className="card">
               <div className="collection">
@@ -24,7 +29,7 @@ class App extends React.Component {
         </div>
       </div>
       );
-  }
+  } 
 }
 
 MyComponents.App = App
