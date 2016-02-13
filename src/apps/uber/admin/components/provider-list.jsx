@@ -1,7 +1,6 @@
 class ProviderList extends React.Component {
   render(){
     var provider = this.props.provider;
-    console.log('provider: ', provider);
     return (
     <div className="col s12 m6">
       <div className="card">

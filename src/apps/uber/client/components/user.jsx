@@ -11,9 +11,13 @@ class User extends React.Component {
           </div>)
     } else {
       // user is not set
-      return( <li>
-        <a href="#" onClick={this.props.loginAction}>Login via Github</a>
-      </li>)
+      return( 
+        <div>
+          <br></br>
+          <a href="#" onClick={this.props.loginAction} className="waves-effect waves-light btn"><i className="fa fa-github fa-2x"></i> Login via Github</a>
+          <br></br>
+        </div>
+      )
     }
   }
 
