@@ -1,3 +1,4 @@
+//Team is on the main page!
 MyComponents.Team = React.createClass({
   render: function() {
 
