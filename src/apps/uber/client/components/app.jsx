@@ -1,5 +1,6 @@
 class App extends React.Component {
   render(){
+    console.log("User in app", this.props.data);
 	   var providerElements = this.props.data.providers.map(function(p,i){
       return <MyComponents.ProviderList provider={p} key={i}/>
     })
