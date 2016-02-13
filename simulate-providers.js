@@ -41,6 +41,7 @@ function enter(person){
   var ref = new Firebase("https://team-revolver.firebaseio.com/");
   var usersRef = ref.child("providers");
   usersRef.child(person.name).set({
+    name: person.name,
     duration: person.duration,
     lat: person.lat,
     lon: person.lon
