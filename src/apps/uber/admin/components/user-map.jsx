@@ -10,7 +10,7 @@ class UserMap extends React.Component {
       popupAnchor: [-3, -76]
     })
     const userElements = _.map(clients, function(u,i){
-      
+
       var pos = [u.pos[0], u.pos[1]];
       return <Marker position={pos} key={i} icon={client_icon}>
         <Popup>
@@ -20,7 +20,7 @@ class UserMap extends React.Component {
     })
 
     const providers = this.props.providers
-    //console.log('providers: ', providers)
+    //console.log('providers: ', providersNames)
     var provider_icon = L.icon({
       iconUrl: 'img/provider_icon.png',
       iconSize: [40, 40],
@@ -30,10 +30,10 @@ class UserMap extends React.Component {
     const providerElements = _.map(providers, function(p,j){
       
       var pos = [p.lat, p.lon];
-	  console.log('providers: ', providers.lat)
+
       return <Marker position={pos} key={j} icon={provider_icon}>
         <Popup>
-          <span>{p.lat}</span>
+          <span>{p.name}</span>
         </Popup>
       </Marker>
     })
