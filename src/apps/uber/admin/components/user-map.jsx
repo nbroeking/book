@@ -33,7 +33,7 @@ class UserMap extends React.Component {
 
       return <Marker position={pos} key={j} icon={provider_icon}>
         <Popup>
-          <span>{p.name}</span>
+          <span><b>{p.name}</b><br></br>{p.restaurant}</span>
         </Popup>
       </Marker>
     })
