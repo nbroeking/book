@@ -10,14 +10,14 @@ The data model for this project would require 4 pieces.
 * Chats
 * Currently Typing
 
-To orginize this We could do something like 
+To ackomplish this We could create a data model along the lines of: 
 
 * Users -
   * key - Name
   * key - ImageURL
   * key - username
   
-*Chatrooms -
+* Chatrooms -
   * key - chatroom
     * chat - 
       * key - chattext
