@@ -1,7 +1,7 @@
 class Content extends React.Component {
   render(){
     return (
-      <div className="collection">
+      <div className="collection" id="topics">
         <a href="#!" className="collection-item">Economics</a>
         <a href="#!" className="collection-item">Dating</a>
         <a href="#!" className="collection-item">Work</a>
