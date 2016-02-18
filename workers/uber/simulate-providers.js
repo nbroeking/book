@@ -16,11 +16,13 @@ function simulate(){
   // generate a random person with a random name,
   // random location, and random duration
   var name = random_name()
+  var restaurant = randRestaurant()
   var duration = 1 + 5 * Math.random()
   var lat = city_location.lat + radius * (Math.random() - 0.5) * 2
   var lon = city_location.lon + radius * (Math.random() - 0.5) * 2
   var person = {
     name: name,
+	restaurant: restaurant,
     duration: duration,
     lat: lat,
     lon: lon
@@ -36,12 +38,29 @@ function simulate(){
 
 }
 
+function randRestaurant(){
+	var restaurants = [
+      'Take a Pizza My Heart, ltd.',
+      'Dominos Terrible Pizza',
+	  'Cheesus Crust Pizza',
+	  'Pizza Overlord',
+	  'Life of Pie',
+	  'Slice of Life',
+	  'Cut the Cheese'
+    ];
+	
+	var rand = Math.floor(Math.random()*restaurants.length);
+	
+	return restaurants[rand];
+}
+
 function enter(person){
   console.log('enter', person)
   var ref = new Firebase("https://team-revolver.firebaseio.com/");
   var usersRef = ref.child("providers");
   usersRef.child(person.name).set({
     name: person.name,
+	restaurant: person.restaurant,
     duration: person.duration,
     lat: person.lat,
     lon: person.lon
@@ -62,5 +81,5 @@ function clear(){
 //This is so we always start fresh
 clear();
 
-// run each second
+// run every second
 setInterval(simulate, 2000)
