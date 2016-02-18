@@ -97,7 +97,7 @@ This should look similar to the output of running locally.
 Each time you made changes to the script (i.e., `workers/uber/simulate-providers.js`).
 You can commit the changes
 
-    $ git commit -a -m 'another commit message'
+    $ git commit -am 'another commit message'
 
 Then run the subtree command to deploy to Heroku again
 
