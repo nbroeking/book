@@ -30,7 +30,7 @@ class UserMap extends React.Component {
     const providerElements = _.map(providers, function(p,j){
       
       var pos = [p.lat, p.lon];
-	  log "Hello, world!";
+	  console.log('providers: ', providers.lat)
       return <Marker position={pos} key={j} icon={provider_icon}>
         <Popup>
           <span>{p.lat}</span>
