@@ -6,7 +6,8 @@ layout: layout.hbs
 
 ##Functionality
 * [ ] Make providers follow path
-* [ ] Login from admin page
+* [X] Login from admin page
+* [ ] Make Icon show up on map where logged in user clicks on client page
 
 ##Look and Feel
 * [ ] Clean up pop ups

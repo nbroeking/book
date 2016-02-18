@@ -9,28 +9,29 @@ class App extends React.Component {
     
     return <div>
 	  <MyComponents.NavBar data={this.props.data} actions={this.props.actions}/>
-    <div className="container">
-      <br></br>
-		  <MyComponents.UserMap users={this.props.data.users}
-		  providers={this.props.data.providers}
-      provider={this.props.data.provider}
-		  center={this.props.data.center}
-		  user={this.props.data.user}
-		  setUserLocationAction={this.props.actions.setUserLocation}/>
+		<div className="container">
+		  <br></br>
+		  <MyComponents.UserMap 
+			users={this.props.data.users}
+			providers={this.props.data.providers}
+			provider={this.props.data.provider}
+			center={this.props.data.center}
+			user={this.props.data.user}
+			setUserLocationAction={this.props.actions.setUserLocation}/>			
 
-      <h3><i className="medium material-icons">person_pin</i> Users List:</h3>
-  	  <hr></hr>
-  	  <div className="row">
-        {userElements}
-  	  </div>
+		  <h3><i className="medium material-icons">person_pin</i> Users List:</h3>
+		  <hr></hr>
+		  <div className="row">
+			{userElements}
+		  </div>
 
-      <h3><i className="fa fa-truck"></i> Providers List: </h3>
-      <hr></hr>
-      <div className="row">
-        {providerElements}
-      </div> 
-	     
-    </div>
+		  <h3><i className="fa fa-truck"></i> Providers List: </h3>
+		  <hr></hr>
+		  <div className="row">
+			{providerElements}
+		  </div> 
+			 
+		</div>
     </div>
   }
 }
