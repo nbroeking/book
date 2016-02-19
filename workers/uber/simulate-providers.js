@@ -64,7 +64,7 @@ function simulate(){
 
 function moveForward( person){
     if( person.direction == "up"){
-        person.lon += 0.003;
+        person.lon += 0.002;
     }
     else if( person.direction == "right"){
         person.lat += 0.003;
