@@ -6,18 +6,17 @@ layout: layout.hbs
 
 ##Functionality
 * [ ] Make providers follow path
-* [X] Login from admin page
+* [x] Login from admin page
 * [ ] Make Icon show up on map where logged in user clicks on client page--only works on admin pg
 
 ##Look and Feel
 * [ ] Clean up pop ups
-* [X] Fix provider names
+* [x] Fix provider names
 	* [X] Make providers have Pizza Names
-* [ ] Sort by Provider type
-* [ ] Make pizza theme (with cards, etc.)
+* [x] Make pizza theme (with cards, etc.)
 	
 ##Team
-* [ ] Team Card 
+* [x] Team Card 
 
 ##Turn In 
 * [ ] Push to firebase

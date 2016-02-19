@@ -7,10 +7,8 @@ class App extends React.Component {
       return <MyComponents.ProviderList provider={p} key={j} id={p.key}/>
     })
     
-    return <div>
-	  <MyComponents.NavBar data={this.props.data} actions={this.props.actions}/>
-		<div className="container">
-		  <br></br>
+    return <div className="container">
+      <h3><i className="fa fa-location-arrow"></i> Client and User Map: </h3>
 		  <MyComponents.UserMap 
 			users={this.props.data.users}
 			providers={this.props.data.providers}
@@ -30,8 +28,6 @@ class App extends React.Component {
 		  <div className="row">
 			{providerElements}
 		  </div> 
-			 
-		</div>
     </div>
   }
 }

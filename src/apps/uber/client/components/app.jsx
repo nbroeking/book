@@ -5,17 +5,19 @@ class App extends React.Component {
       return <MyComponents.ProviderList provider={p} key={i}/>
     })
     return (
-      <div>
-        <MyComponents.NavBar data={this.props.data} actions={this.props.actions}/>
-        <div className="container">
-          <br></br>
-          <MyComponents.User
-            user={this.props.data.user}
-            loginAction={this.props.actions.login}
-            logoutAction={this.props.actions.logout}/>
+      <div className="container">
+      
+    <h3><i className="fa fa-user"></i> User Info: </h3>
+      <MyComponents.People 
+        data={this.props.data}
+        members={this.props.members}
+        actions={this.props.actions}/>
+      
+        <h3><i className="fa fa-location-arrow"></i> Providers Map: </h3>
           <MyComponents.MapView
             providers={this.props.data.providers}
             center={this.props.data.center}
+      
             user={this.props.data.user}
             setUserLocationAction={this.props.actions.setUserLocation}/>
 
@@ -24,7 +26,6 @@ class App extends React.Component {
           <div className="row">
             {providerElements}
           </div>
-        </div>
       </div>
       );
   } 
