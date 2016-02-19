@@ -22,7 +22,7 @@ function simulate(){
   var lon = city_location.lon + radius * (Math.random() - 0.5) * 2
   var person = {
     name: name,
-	restaurant: restaurant,
+	  restaurant: restaurant,
     duration: duration,
     lat: lat,
     lon: lon
@@ -60,7 +60,7 @@ function enter(person){
   var usersRef = ref.child("providers");
   usersRef.child(person.name).set({
     name: person.name,
-	restaurant: person.restaurant,
+	  restaurant: person.restaurant,
     duration: person.duration,
     lat: person.lat,
     lon: person.lon
