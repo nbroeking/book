@@ -16,7 +16,7 @@ function simulate(){
   var randnumber = Math.floor((Math.random() * 10) + 1);
 
   
-  if( randnumber < 7 && Object.keys(drivers).length < 15){  
+  if( randnumber < 7 && Object.keys(drivers).length < 3){  
     // generate a random person with a random name,
     // random location, and random duration
     var name = random_name()
