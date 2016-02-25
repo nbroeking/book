@@ -35,12 +35,13 @@ behind a bit, please start early. Don't wait until the weekend.
   * [ ] Every link on the index page of your book (e.g.,
     [https://ucdd2-book.firebaseapp.com/](https://ucdd2-book.firebaseapp.com/))
     should be working and will show the latest content.
-    * [ ] ToDos
-    * [ ] Resume
-    * [ ] Parking
-    * [ ] Uber
-    * [ ] Together
-
+    * [x] ToDos
+    * [x] Resume
+    * [x] Parking
+    * [x] Uber
+    * [x] Together
+	 * [ ] Make Github work with individual account
+	 
 ## Submission
 * Write your proposal in `/apps/together/proposal/index.md`, which will generate
 [`/apps/together/proposal/index.html`](/apps/together/proposal/index.html)
