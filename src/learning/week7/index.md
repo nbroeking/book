@@ -24,15 +24,15 @@ behind a bit, please start early. Don't wait until the weekend.
 ## Requirements
 
 * Team
-  * [ ] Form a team of FOUR
-  * [ ] Write a proposal of a together app that integrates ideas from every team
+  * [x] Form a team of FOUR
+  * [x] Write a proposal of a together app that integrates ideas from every team
   member
 
 * Individual
-  * [ ] Your personal repo should contain the same code of all the apps your teams
+  * [x] Your personal repo should contain the same code of all the apps your teams
   have developed and submitted up to this point. This may involve copying code and database
   from your teams' repos and making sure everything works.
-  * [ ] Every link on the index page of your book (e.g.,
+  * [x] Every link on the index page of your book (e.g.,
     [https://ucdd2-book.firebaseapp.com/](https://ucdd2-book.firebaseapp.com/))
     should be working and will show the latest content.
     * [x] ToDos
@@ -40,7 +40,7 @@ behind a bit, please start early. Don't wait until the weekend.
     * [x] Parking
     * [x] Uber
     * [x] Together
-	 * [ ] Make Github work with individual account
+	 * [x] Make Github work with individual account
 	 
 ## Submission
 * Write your proposal in `/apps/together/proposal/index.md`, which will generate
