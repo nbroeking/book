@@ -65,8 +65,10 @@ useful ideas.
   * (TODO)
   
 * Kieran Czerwinski
-  * (TODO)
-  
+  * Users can create their own chatrooms and invite friends.
+  * Users can add embeded media content from youtube, vimeo, soundcloud, etc. to a special media section of the chat room.
+  * Users can watch or listen to this media together in realtime and chat about them.
+
 * Andrew
   * (TODO)
 
