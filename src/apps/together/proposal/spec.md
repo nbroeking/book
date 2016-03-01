@@ -8,11 +8,34 @@ layout: layout.hbs
 
 Our app uses the following structure for the database backend:
 
-* foo
-  * bar
-    * ss
-    * xx
-  * messages
+The data model for this project would require 4 pieces.
+* Users
+* Chatrooms
+* Chats
+* Attachments
+
+* Users -
+  * key - ID
+  * key - Name
+  * key - ImageURL
+  * key - UserName
+  * key - CurrentlyTyping
+  * key - IsBlocked 
+  * key - IsAdmin
+
+* Chatrooms -
+  * key - ID
+  * key - Chatroom
+    * chat -
+      * key - ID 
+      * key - ChatText
+      * key - Score
+      * key - UserID
+      * Attachment -
+        * key - ID 
+        * key - ContentType
+        * key - URL
+
 
 # Actions
 
