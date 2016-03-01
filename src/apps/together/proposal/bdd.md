@@ -32,9 +32,10 @@ Feature: Login
 ## Feature: Chat Window
 
 ``` gherkin
-  Chat window should allow users to submit messages 
-  Chat Window should not be visible until user is logged in
-  Chat window should contain messages associated with +/- score
+Feature: Chat Window
+	As a user of Chaty Kathy
+	I want to chat with other users
+	So that I can exchange messages with everyone elses
 
   Scenario: Submit Message
     Given I am logged in
