@@ -4,11 +4,29 @@ layout: layout.hbs
 
 # Features
 
-## Feature: My App's Feature 1
+## Feature: Login
 
 ``` gherkin
-TODO:
+Feature: Login
+  As a user of ChatyKathy
+  I want to login via Github.
+  So that messages are logged in under my account. 
 
+  Scenario: Starting App
+    Given when I am first visiting page
+    When the page loads
+    Then I should see a login prompt
+    
+  Scenario: Login
+    Given I have a github account
+    When I click login
+    Then Github validates my info and logs into Chatty Kathy
+     
+   
+  Scenario: Validated
+    Given I loged in
+    When the page loads
+    Then I should see the home page
 ```
 
 ## Feature: My App's Feature 2
