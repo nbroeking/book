@@ -26,11 +26,11 @@ The data model for this project would require 4 pieces.
 * Chatrooms -
   * key - ID
   * key - Chatroom
-    * chat -
+    * chats -
       * key - ID 
-      * key - ChatText
+      * key - Text
       * key - Score
-      * key - UserID
+      * key - UserName
       * Attachment -
         * key - ID 
         * key - ContentType
@@ -40,27 +40,57 @@ The data model for this project would require 4 pieces.
 # Actions
 
 The major actions of our app are:
-* (TODO: action name)
-* (TODO: action name)
-* (TODO: action name)
-* (TODO: action name)
-* (TODO: action name)
+* Login
+* Create a chatroom
+* Join a chatroom
+* Post a chat
+* Upvote/Downvote a chat
+* Ban User
 
-## Action: (TODO: name)
-
-(TODO: cases)
-
-## Action: (TODO: name)
+## Action: Login
 
 (TODO: cases)
 
-## Action: (TODO: name)
+## Action: Create a chatroom
 
 (TODO: cases)
 
-## Action: (TODO: name)
+## Action: Join a chatroom
 
 (TODO: cases)
+
+## Action: Post a chat 'good'
+
+``` javascript
+// given
+chatroom.chats is
+{
+  '-cadsace': {... UserName: 'Bob' , Text: 'hi guys'},
+  '-cadsacf': {... UserName: 'Jeff', Text: 'how are you?'},
+}
+// and
+user.username is Matt
+
+// when
+post_a_message(Text = 'good', UserName = 'Matt')
+
+// then
+foo.bar.messages should be
+{
+  '-cadsace': {... UserName: 'Bob' , Text: 'hi guys'},
+  '-cadsacf': {... UserName: 'Jeff', Text: 'how are you?'},
+  '-cadsacf': {... UserName: 'Matt', Text: 'good'},
+}
+```
+
+## Action: Upvote/Downvote a chat
+
+(TODO: cases)
+
+## Action: Ban User
+
+(TODO: cases)
+
 
 
 
