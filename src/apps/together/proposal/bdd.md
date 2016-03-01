@@ -11,11 +11,30 @@ TODO:
 
 ```
 
-## Feature: My App's Feature 2
+## Feature: Chat Window
 
 ``` gherkin
-TODO:
+  Chat window should allow users to submit messages 
+  Chat Window should not be visible until user is logged in
+  Chat window should contain messages associated with +/- score
 
+  Scenario: Submit Message
+    Given I am logged in
+    And have selected a chat window
+    And have typed in a message
+    When I press the submit button
+    Then I should see my message appear in chat
+
+  Scenario: View Messages
+    Given I am logged in 
+    When I select a chat window
+    Then I should see all messages from users in chat
+
+  Scenario: Upvote Message
+    Given I am logged in
+    And have selected a chat window
+    When I press the + button on a chat submission
+    Then I should see the + count increase by 1
 ```
 
 ## Feature: My App's Feature 3
