@@ -83,9 +83,10 @@ Feature: Categories
 ## Feature: Admin
 
 ``` gherkin
-  Active user list should display all offline/online users
-  Admin should have ability to block user 
-  Admin should have ability to view blocked users
+Feature: Admin Page
+	As a admin of Chaty Kathy
+	I want to manage users
+	So that I can provide a positive environment
 
   Scenario: View users
     Given I am logged in as an Admin
