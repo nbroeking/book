@@ -18,11 +18,28 @@ TODO:
 
 ```
 
-## Feature: My App's Feature 3
+## Feature: Categories
 
 ``` gherkin
-TODO:
+Feature: Categories
+  As a user of ChattyKathy
+  I want to view or create categories
+  So that I can view specfic topics or create one of my own. 
 
+  Scenario: Changing Categories
+    Given I am logged in with my GitHub repository
+    When I go to select a category
+    Then I should see the selected categories chats.
+
+  Scenario: Creating New Categories
+    Given I am logged in with my GitHub repository
+    When I click create new topic
+    Then I should see the new topic appear in the list.
+    
+  Scenario: Removing Categories
+    Given I am logged in with my GitHub repository
+    When I go to remove a topic
+    Then I should see the topic removed from the list. 
 ```
 
 ## Feature: My App's Feature 4
