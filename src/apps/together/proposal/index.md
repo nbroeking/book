@@ -72,7 +72,9 @@ useful ideas.
   * Users can watch or listen to this media together in realtime and chat about them.
 
 * Andrew
-  * (TODO)
+  * Can chat with multiple users.
+  * Login with github.
+  * Send a private message.
 
 ## Plan
 
