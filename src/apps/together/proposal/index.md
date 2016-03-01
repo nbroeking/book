@@ -71,7 +71,7 @@ useful ideas.
   * Users can add embeded media content from youtube, vimeo, soundcloud, etc. to a special media section of the chat room.
   * Users can watch or listen to this media together in realtime and chat about them.
 
-* Andrew
+* Andrew Krodinger
   * Can chat with multiple users.
   * Login with github.
   * Send a private message.
