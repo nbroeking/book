@@ -63,10 +63,28 @@ TODO:
 
 ```
 
-## Feature: My App's Feature 4
+## Feature: Admin
 
 ``` gherkin
-TODO:
+  Active user list should display all offline/online users
+  Admin should have ability to block user 
+  Admin should have ability to view blocked users
+
+  Scenario: View users
+    Given I am logged in as an Admin
+    When I click the admin page
+    Then I should see a list of online/offline users
+
+  Scenario: Block User
+    Given I am logged in as an Admin
+    When I select a user
+    And click block
+    Then user should get blocked 
+
+  Scenario: Blocked Users
+    Given I am logged in as an Admin
+    When I click the admin page
+    Then I should see a list of blocked users 
 
 ```
 
