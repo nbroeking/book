@@ -25,6 +25,8 @@ The data model for this project would require 4 pieces.
 
 * Chatrooms -
   * key - ID
+  * key - Name
+  * key - Category
   * key - Chatroom
     * chats -
       * key - ID 
@@ -53,7 +55,25 @@ The major actions of our app are:
 
 ## Action: Create a chatroom
 
-(TODO: cases)
+``` javascript
+// given
+chatrooms is
+{
+  '-cadsace': {... Name: 'Space Dicks', Category: 'Other'},
+}
+// and 
+user.current_user is 'true'
+
+// when
+create_chatroom(Name = 'Feel the Bern', Category: 'Politics')
+
+// then
+chatrooms should be
+{
+  '-cadsace': {... Name: 'Space Dicks', Category: 'Other'},
+  '-cadsacf': {... Name: 'Feel the Bern', Category: 'Politics'}
+}
+```
 
 ## Action: Join a chatroom
 
@@ -75,21 +95,58 @@ user.username is Matt
 post_a_message(Text = 'good', UserName = 'Matt')
 
 // then
-foo.bar.messages should be
+chatroom.chats should be
 {
   '-cadsace': {... UserName: 'Bob' , Text: 'hi guys'},
   '-cadsacf': {... UserName: 'Jeff', Text: 'how are you?'},
-  '-cadsacf': {... UserName: 'Matt', Text: 'good'},
+  '-cadsacg': {... UserName: 'Matt', Text: 'good'}
 }
 ```
 
 ## Action: Upvote/Downvote a chat
 
-(TODO: cases)
+``` javascript
+// given
+chatroom.chats is
+{
+  '-cadsace': {... UserName: 'Bob' , Text: 'hi guys', Score: 'null'},
+  '-cadsacf': {... UserName: 'Jeff', Text: 'how are you?', Score: 'null'}
+}
+
+// when
+up_vote(id = '-cadsace')
+
+// then
+chatroom.chats should be
+{
+  '-cadsace': {... UserName: 'Bob' , Text: 'hi guys', Score: '1'},
+  '-cadsacf': {... UserName: 'Jeff', Text: 'how are you?', Score: 'null'}
+}
+```
 
 ## Action: Ban User
 
-(TODO: cases)
+
+``` javascript
+// given
+chatroom.users is
+{
+  '-cadsace': {... UserName: 'Bob' , IsBlocked: 'false'},
+  '-cadsacf': {... UserName: 'Jeff', IsBlocked: 'false'}
+}
+// and
+user.IsAdmin is 'true'
+
+// when
+ban_user(UserName = 'Jeff', IsBlocked = 'true')
+
+// then
+chatroom.users should be
+{
+  '-cadsace': {... UserName: 'Bob' , IsBlocked: 'false'},
+  '-cadsacf': {... UserName: 'Jeff', IsBlocked: 'true'}
+}
+```
 
 
 
