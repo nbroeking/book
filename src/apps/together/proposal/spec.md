@@ -27,7 +27,10 @@ The data model for this project would require 4 pieces.
   * key - ID
   * key - Name
   * key - Category
-  * key - Chatroom
+    * users -
+      * key - ID
+      * key - UserName
+      * key - IsBlocked
     * chats -
       * key - ID 
       * key - Text
@@ -51,7 +54,19 @@ The major actions of our app are:
 
 ## Action: Login
 
-(TODO: cases)
+``` javascript
+// given
+user.current_user = 'null'
+
+// when
+user_login(UserName = 'BobbyBoy69')
+
+// then
+user.current_user should be
+{
+  '-cadsace': {... UserName: 'BobbyBoy69'},
+}
+```
 
 ## Action: Create a chatroom
 
@@ -77,7 +92,27 @@ chatrooms should be
 
 ## Action: Join a chatroom
 
-(TODO: cases)
+``` javascript
+// given
+chatroom.users is
+{
+  '-cadsace': {... UserName: 'Bob'},
+  '-cadsacf': {... UserName: 'Jeff'}
+}
+// and
+user.username is Kieran
+
+// when
+join_chatroom(UserName = 'Kieran')
+
+// then
+chatroom.users should be
+{
+  '-cadsace': {... UserName: 'Bob'},
+  '-cadsacf': {... UserName: 'Jeff'},
+  '-cadsacg': {... UserName: 'Kieran'}
+}
+```
 
 ## Action: Post a chat 'good'
 
@@ -86,7 +121,7 @@ chatrooms should be
 chatroom.chats is
 {
   '-cadsace': {... UserName: 'Bob' , Text: 'hi guys'},
-  '-cadsacf': {... UserName: 'Jeff', Text: 'how are you?'},
+  '-cadsacf': {... UserName: 'Jeff', Text: 'how are you?'}
 }
 // and
 user.username is Matt
