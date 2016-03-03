@@ -1,0 +1,20 @@
+.full {
+    height:80%;
+}
+
+html, body {
+    height: 100%;    
+}
+
+#chatbox
+{
+    width:auto;
+    height:300px;
+    overflow-y: auto;
+}
+#topics
+{
+    width:auto;
+    height:300px;
+    overflow-y: auto;
+}
