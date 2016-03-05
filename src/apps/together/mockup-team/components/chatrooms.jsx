@@ -19,7 +19,7 @@ MyComponents.ChatroomsContent = Content
 class ChatRooms extends React.Component {
   render(){
     return (
-      <div className="col s3">
+      <div>
         <MyComponents.Card title={"Select Chatroom to Talk"} content={<MyComponents.ChatroomsContent />}/>
       </div>
       );

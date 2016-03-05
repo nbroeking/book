@@ -62,7 +62,7 @@ MyComponents.ChatContent = ChatContent
 class Chat extends React.Component {
   render(){
     return (
-      <div className="col s9 full" >
+      <div>
         <MyComponents.Card title={"Travel"} content={<MyComponents.ChatContent />}/>
       </div>
       );

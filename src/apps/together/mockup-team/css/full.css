@@ -8,13 +8,11 @@ html, body {
 
 #chatbox
 {
-    width:auto;
     height:300px;
     overflow-y: auto;
 }
 #topics
 {
-    width:auto;
     height:300px;
     overflow-y: auto;
 }

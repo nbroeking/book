@@ -9,7 +9,7 @@ class Answers extends React.Component {
               <div className="card-content white-text">
                 <span className="card-title">App Name?</span>
                 <div className="white black-text">
-                  <p>This revolutionary app is called NextChat!</p>
+                  <p>This revolutionary app is called Chatty Kathy!</p>
                 </div>
               </div>
             </div>
@@ -18,7 +18,7 @@ class Answers extends React.Component {
           <div className="col s4">
             <div className="card grey">
               <div className="card-content white-text">
-                <span className="card-title">Why would I use NextChat?</span>
+                <span className="card-title">Why would I use Chatty Kathy?</span>
                 <div className="white black-text">
                   <p>Next chat offers a new twist on a old technology. Chatrooms we provide an easy way for people to join a chat and communicate.</p>
                 </div>
@@ -29,7 +29,7 @@ class Answers extends React.Component {
           <div className="col s4">
             <div className="card grey">
               <div className="card-content white-text">
-                <span className="card-title">How many people can use NextChat at the same time?</span>
+                <span className="card-title">How many people can use Chatty Kathy at the same time?</span>
                 <div className="white black-text">
                   <p>As many people as you want but most chatrooms work best with about 15 people.</p>
                 </div>
@@ -59,7 +59,7 @@ class Answers extends React.Component {
             </div>
           </div>
         
-        <div className="col s4">
+          <div className="col s4">
             <div className="card grey">
               <div className="card-content white-text">
                 <span className="card-title">How can I see what others are typing?</span>

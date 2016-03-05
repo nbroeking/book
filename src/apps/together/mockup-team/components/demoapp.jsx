@@ -3,16 +3,17 @@ class App extends React.Component {
     return (
       <div>
         <MyComponents.NavBar data={this.props.data} actions={this.props.actions}/>
-        <div className="collection">
-          <div className="card teal lighten-3">
-            <div className="card-content collection">
-              <div className="row">
-                <MyComponents.Chatrooms />
-                <MyComponents.Chat />
-              </div>
-              <div>
-                <MyComponents.Chatbox />
-              </div>
+        <div className="container">
+          <br></br>
+          <div className="row">
+            <div className="col s4">
+              <MyComponents.Chatrooms />
+            </div>
+            <div className="col s8">
+              <MyComponents.Chat />
+            </div>
+            <div className="col s8 offset-s4">
+              <MyComponents.Chatbox />
             </div>
           </div>
         </div>
