@@ -16,3 +16,14 @@ html, body {
     height:300px;
     overflow-y: auto;
 }
+.textbubble
+{
+    width:100%;
+}
+.nomargin
+{
+	margin-right:0;
+	margin-left:0;
+	padding-left:0;
+	padding-right:0;
+}

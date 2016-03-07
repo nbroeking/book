@@ -20,7 +20,7 @@ class Answers extends React.Component {
               <div className="card-content white-text">
                 <span className="card-title">Why would I use Chatty Kathy?</span>
                 <div className="white black-text">
-                  <p>Next chat offers a new twist on a old technology. Chatrooms we provide an easy way for people to join a chat and communicate.</p>
+                  <p>Chatty Kathy offers a new twist on a old technology. Chatrooms we provide an easy way for people to join a chat and communicate.</p>
                 </div>
               </div>
             </div>

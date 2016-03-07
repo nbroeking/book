@@ -3,54 +3,54 @@ class ChatContent extends React.Component {
     return (
       <div className="collection waxz" id="chatbox">
       
-      <MyComponents.TextBubble text={"Nic: Has anyone here ever been to Costa Rica?"} />
+      <MyComponents.TextBubble score={"+2"} text={"Nic: Has anyone here ever been to Costa Rica?"} />
       <br/>
       <br/>
       
-      <MyComponents.TextBubble text={"Alexa: Yes what do you want to know?"} />
+      <MyComponents.TextBubble score={"+5"} text={"Alexa: Yes what do you want to know?"} />
       <br/>
       <br/>
       
-      <MyComponents.TextBubble text={"Nic: Where would you recomend I go?"} />
+      <MyComponents.TextBubble score={"0"} text={"Nic: Where would you recomend I go?"} />
 
       <br/>
       <br/>
       
-      <MyComponents.TextBubble text={"Alexa: Definatly go to the tamarindo area! Its amazing!!!"} />
+      <MyComponents.TextBubble score={"0"} text={"Alexa: Definatly go to the tamarindo area! Its amazing!!!"} />
       
       <br/>
       <br/>
       
-      <MyComponents.TextBubble text={"Rachel: I agree. I went there once and it was absolutly beautiful."} />
+      <MyComponents.TextBubble score={"0"} text={"Rachel: I agree. I went there once and it was absolutly beautiful."} />
       <br/>
       <br/>
       
-      <MyComponents.TextBubble text={"Ross: I also recomend the caribean side. It has beautiful beaches."} />
+      <MyComponents.TextBubble score={"0"} text={"Ross: I also recomend the caribean side. It has beautiful beaches."} />
       
       <br/>
       <br/>
-      <MyComponents.TextBubble text={"Nic: Thank you everyone. Ill let you know how it goes."} />
+      <MyComponents.TextBubble score={"+2"} text={"Nic: Thank you everyone. Ill let you know how it goes."} />
       
       <br/>
       <br/>
-      <MyComponents.TextBubble text={"Nic: I just go back from my trip and it was amazing! Thank you everyone that helped."} />
+      <MyComponents.TextBubble score={"+5"} text={"Nic: I just go back from my trip and it was amazing! Thank you everyone that helped."} />
       
       <br/>
       <br/>
-      <MyComponents.TextBubble text={"Alexa: No worries Im glad I could help!"} />
+      <MyComponents.TextBubble score={"+2"} text={"Alexa: No worries Im glad I could help!"} />
 
       
       <br/>
       <br/>
-      <MyComponents.TextBubble text={"Ross: What did you end up doing?"} />
+      <MyComponents.TextBubble score="-2" text={"Ross: What did you end up doing?"} />
 
       
       <br/>
       <br/>
-      <MyComponents.TextBubble text={"Nic: The best was just hanging out on the beach!"} />
+      <MyComponents.TextBubble score="0" text={"Nic: The best was just hanging out on the beach!"} />
       <br/>
       <br/>
-      <p>Ross is typing: oh that sounds fun!</p>
+      <p>Ross is typing...</p>
       </div>
 
     );
