@@ -1,5 +1,7 @@
 class App extends React.Component {
   render(){
+    console.log("selected:" + this.props.data.selectedRoom)
+    console.log(this.props.data.chatrooms)
     return (
       <div>
         <MyComponents.NavBar data={this.props.data} actions={this.props.actions}/>
@@ -10,7 +12,7 @@ class App extends React.Component {
               <MyComponents.Chatrooms data={this.props.data}/>
             </div>
             <div className="col s8">
-              <MyComponents.Chat />
+              <MyComponents.Chat data = {this.props.data}/>
             </div>
             <div className="col s8 offset-s4">
               <MyComponents.Chatbox />

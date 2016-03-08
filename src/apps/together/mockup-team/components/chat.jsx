@@ -1,56 +1,46 @@
 class ChatContent extends React.Component {
   render(){
+
+    // Determine what chatRoom to display
+    var curRoom;
+    for (var i = 0; i < this.props.data.chatrooms.length; i++)
+    {
+      if (this.props.data.chatrooms[i].name = this.props.data.selectedRoom)
+      {
+        curRoom = this.props.data.chatrooms[i];
+        break;
+      }
+    }
+
+    // Display the current chat boxes
+    var chats = Object.keys(curRoom.chats).map(function(p, i){
+      var chatEntry = curRoom.chats[p]
+      return (
+        <MyComponents.TextBubble score={chatEntry.score} text={chatEntry.userName + ": " + chatEntry.text} />
+         );
+    })
+
+    // Display the current typers
+    var users = this.props.data.users;
+    var curTypers = Object.keys(users).map(function(p,i){
+      var curUser = users[p];
+      // Will need to also verify they are in this room. 
+      if (users[p].currentlyTyping) {
+        return (
+         <p> {curUser.userName + " is typing..."} </p>
+         );
+      }
+      // If not return nothing. 
+      else return ( <p></p>)
+    });
+
+    // Actually display everything. 
     return (
       <div className="collection waxz" id="chatbox">
       
-      <MyComponents.TextBubble score={"+2"} text={"Nic: Has anyone here ever been to Costa Rica?"} />
-      <br/>
-      <br/>
+      {chats}
       
-      <MyComponents.TextBubble score={"+5"} text={"Alexa: Yes what do you want to know?"} />
-      <br/>
-      <br/>
-      
-      <MyComponents.TextBubble score={"0"} text={"Nic: Where would you recomend I go?"} />
-
-      <br/>
-      <br/>
-      
-      <MyComponents.TextBubble score={"0"} text={"Alexa: Definatly go to the tamarindo area! Its amazing!!!"} />
-      
-      <br/>
-      <br/>
-      
-      <MyComponents.TextBubble score={"0"} text={"Rachel: I agree. I went there once and it was absolutly beautiful."} />
-      <br/>
-      <br/>
-      
-      <MyComponents.TextBubble score={"0"} text={"Ross: I also recomend the caribean side. It has beautiful beaches."} />
-      
-      <br/>
-      <br/>
-      <MyComponents.TextBubble score={"+2"} text={"Nic: Thank you everyone. Ill let you know how it goes."} />
-      
-      <br/>
-      <br/>
-      <MyComponents.TextBubble score={"+5"} text={"Nic: I just go back from my trip and it was amazing! Thank you everyone that helped."} />
-      
-      <br/>
-      <br/>
-      <MyComponents.TextBubble score={"+2"} text={"Alexa: No worries Im glad I could help!"} />
-
-      
-      <br/>
-      <br/>
-      <MyComponents.TextBubble score="-2" text={"Ross: What did you end up doing?"} />
-
-      
-      <br/>
-      <br/>
-      <MyComponents.TextBubble score="0" text={"Nic: The best was just hanging out on the beach!"} />
-      <br/>
-      <br/>
-      <p>Ross is typing...</p>
+      {curTypers}
       </div>
 
     );
@@ -61,9 +51,10 @@ MyComponents.ChatContent = ChatContent
 
 class Chat extends React.Component {
   render(){
+    console.log(this.props.data)
     return (
       <div>
-        <MyComponents.Card title={"Travel"} content={<MyComponents.ChatContent />}/>
+        <MyComponents.Card title={this.props.data.selectedRoom} content={<MyComponents.ChatContent data={this.props.data}/>}/>
       </div>
       );
   }

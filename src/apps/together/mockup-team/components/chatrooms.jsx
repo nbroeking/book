@@ -1,9 +1,8 @@
 class Content extends React.Component {
   render(){
-    console.log(this.props.data.chatrooms)
     var chatrooms = this.props.data.chatrooms.map(function(p, i){
     return (
-        <a href="#!" className="collection-item">{p.Name}</a>
+        <a href="#!" className="collection-item">{p.name}</a>
        );
     })
     return (

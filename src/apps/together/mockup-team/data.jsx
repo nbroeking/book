@@ -1,5 +1,6 @@
 // a single 'data' object that holds the data of your entire app, with initial values
 var data = {
+  selectedRoom: "School",
   chatrooms: {},
   users: {},
   user: null
@@ -34,7 +35,7 @@ firebaseRef.child('chatrooms')
     render()
 
   })
-  
+
 // Real-time Data (load constantly on changes)
 firebaseRef.child('users')
   .on('value', function(snapshot){
