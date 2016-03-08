@@ -7,7 +7,7 @@ class App extends React.Component {
           <br></br>
           <div className="row">
             <div className="col s4">
-              <MyComponents.Chatrooms />
+              <MyComponents.Chatrooms data={this.props.data}/>
             </div>
             <div className="col s8">
               <MyComponents.Chat />

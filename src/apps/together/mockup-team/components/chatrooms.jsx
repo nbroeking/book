@@ -1,15 +1,14 @@
 class Content extends React.Component {
   render(){
+    console.log(this.props.data.chatrooms)
+    var chatrooms = this.props.data.chatrooms.map(function(p, i){
+    return (
+        <a href="#!" className="collection-item">{p.Name}</a>
+       );
+    })
     return (
       <div className="collection" id="topics">
-        <a href="#!" className="collection-item">Economics</a>
-        <a href="#!" className="collection-item">Dating</a>
-        <a href="#!" className="collection-item">Work</a>
-        <a href="#!" className="collection-item">Excercise</a>
-        <a href="#!" className="collection-item">Nightlife</a>
-        <a href="#!" className="collection-item">Social</a>
-        <a href="#!" className="collection-item active">Travel</a>
-        <a href="#!" className="collection-item">School</a>
+        {chatrooms}
       </div>
     );
   }
@@ -20,7 +19,7 @@ class ChatRooms extends React.Component {
   render(){
     return (
       <div>
-        <MyComponents.Card title={"Select Chatroom to Talk"} content={<MyComponents.ChatroomsContent />}/>
+        <MyComponents.Card title={"Select Chatroom to Talk"} content={<MyComponents.ChatroomsContent data = {this.props.data}/>}/>
       </div>
       );
   }

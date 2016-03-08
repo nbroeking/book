@@ -1,6 +1,7 @@
 // a single 'data' object that holds the data of your entire app, with initial values
 var data = {
   chatrooms: {},
+  users: {},
   user: null
 }
 
@@ -22,6 +23,28 @@ function render(){
 //
 // DATA
 //
+var firebaseRef = new Firebase('https://chattykathyucdd2.firebaseio.com')
+
+// Real-time Data (load constantly on changes)
+firebaseRef.child('chatrooms')
+  .on('value', function(snapshot){
+
+    data.chatrooms = _.values(snapshot.val())
+
+    render()
+
+  })
+  
+// Real-time Data (load constantly on changes)
+firebaseRef.child('users')
+  .on('value', function(snapshot){
+
+    data.users = _.values(snapshot.val())
+
+    render()
+
+  })
+
 //
 // ACTIONS
 //
