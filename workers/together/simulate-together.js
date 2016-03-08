@@ -56,9 +56,15 @@ function simulate(){
 
     setTimeout(function(){
         var ref = new Firebase(firebaseURL);
-        var chatRef = ref.child("chatrooms/"+ randChatroom() + "/chats");
-        var messageRef = chatRef.push();
+        var chatName = randChatroom();
+        var chatRoomRef = ref.child("chatrooms/"+ chatName);
+        var messageRef = chatRoomRef.child("chats").push();
         
+        // This is a little hacky, may be handled differently once this script is done. 
+        // However, we need a name field within each chatroom that isn't it's key. 
+        var chatRoomRefName = chatRoomRef.child("name")
+        chatRoomRefName.set(chatName)
+
         messageRef.set({
             text: randMessages(), 
             score: 0, 
