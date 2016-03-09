@@ -39,24 +39,38 @@ function randMessages(){
 	return messages[rand];
 }
 
+
+function scoreIncrement(){
+    var score = Math.floor(Math.random() * 6) 
+    return score
+}
+
+function randomProbability() {
+  var notRandomNumbers = [1, 1, 1, 1, 1, 0, 0, 0, 0, 0];
+  var showMeWhatyouGot = Math.floor(Math.random() * notRandomNumbers.length);
+  return notRandomNumbers[showMeWhatyouGot];
+}
+
 // simualate a random person entering, staying for a duration, posting, and leaving
 function simulate(){
     var name = random_name()
+    var chatName = randChatroom()
 
     var person = {
         name: name,
         isBlocked: 1,
         userName: name,
-        currentlyTyping: 0,
+        currentlyTyping: randomProbability(),
         isBlocked: 0,
-        isAdmin: 0
+        isAdmin: 0,
+        chatRoom: chatName
     };
 
     login(person);
 
     setTimeout(function(){
         var ref = new Firebase(firebaseURL);
-        var chatName = randChatroom();
+        
         var chatRoomRef = ref.child("chatrooms/"+ chatName);
         var messageRef = chatRoomRef.child("chats").push();
         
@@ -67,7 +81,7 @@ function simulate(){
 
         messageRef.set({
             text: randMessages(), 
-            score: 0, 
+            score: scoreIncrement(), 
             userName: person.name,
             attachment: 0
         });
@@ -87,9 +101,10 @@ function login(person){
     name: person.name,
     isBlocked: 1,
     userName: person.name,
-    currentlyTyping: 0,
+    currentlyTyping: person.currentlyTyping,
     isBlocked: 0,
-    isAdmin: 0
+    isAdmin: 0,
+    chatRoom: person.chatRoom
     });
 
 }
