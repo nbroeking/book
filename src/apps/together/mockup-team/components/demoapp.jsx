@@ -1,7 +1,5 @@
 class App extends React.Component {
   render(){
-    console.log("selected:" + this.props.data.selectedRoom)
-    console.log(this.props.data.chatrooms)
     return (
       <div>
         <MyComponents.NavBar data={this.props.data} actions={this.props.actions}/>

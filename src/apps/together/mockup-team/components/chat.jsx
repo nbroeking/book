@@ -25,7 +25,7 @@ class ChatContent extends React.Component {
     var curTypers = Object.keys(users).map(function(p,i){
       var curUser = users[p];
       // Will need to also verify they are in this room. 
-      if (users[p].currentlyTyping) {
+      if (users[p].currentlyTyping && users[p].chatRoom == curRoom.name) {
         return (
          <p> {curUser.userName + " is typing..."} </p>
          );
