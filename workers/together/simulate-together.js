@@ -32,7 +32,10 @@ function randMessages(){
         "So do I",
         "Please dont say anything stupid",
         "I hope I get an A in this class",
-        "Me too"
+        "Me too",
+        "The assignment is almost due",
+        "The weather looks really nice today",
+        "How is life?"
     ];
 	
 	var rand = Math.floor(Math.random()*messages.length);	
