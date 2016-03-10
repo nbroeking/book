@@ -63,7 +63,6 @@ function simulate(){
         name: name,
         isBlocked: 1,
         userName: name,
-        currentlyTyping: randomProbability(),
         isBlocked: 0,
         isAdmin: 0,
         chatRoom: chatName
@@ -77,21 +76,35 @@ function simulate(){
         var chatRoomRef = ref.child("chatrooms/"+ chatName);
         var messageRef = chatRoomRef.child("chats").push();
         
+
         // This is a little hacky, may be handled differently once this script is done. 
         // However, we need a name field within each chatroom that isn't it's key. 
         var chatRoomRefName = chatRoomRef.child("name")
         chatRoomRefName.set(chatName)
-
+        
         messageRef.set({
-            text: randMessages(), 
-            score: scoreIncrement(), 
+            text: "", 
+            score: 0, 
+            isTyping: 1,
             userName: person.name,
             attachment: 0
         });
 
+
         setTimeout(function(){
-            logout(person);
-        }, 1000);
+            messageRef.set({
+                text: randMessages(), 
+                score: scoreIncrement(), 
+                isTyping:0,
+                userName: person.name,
+                attachment: 0
+            });
+
+            setTimeout(function(){
+                logout(person);
+            }, 1000);
+        }, 1000)
+        
     }, 1000);
 }
 
@@ -104,9 +117,9 @@ function login(person){
     name: person.name,
     isBlocked: 1,
     userName: person.name,
-    currentlyTyping: person.currentlyTyping,
     isBlocked: 0,
     isAdmin: 0,
+    isLoggedin: 1,
     chatRoom: person.chatRoom
     });
 
@@ -114,8 +127,10 @@ function login(person){
 
 function logout(person){
   console.log('logout', person)  
-  var ref = new Firebase(firebaseURL+"/users/"+person.name);
-  ref.remove();
+  var ref = new Firebase(firebaseURL+"/users/"+person.name );
+  ref.update({
+    isLoggedin: 0
+    });
 }
 
 function clear(){ 
