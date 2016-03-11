@@ -52,7 +52,6 @@ firebaseRef.child('users')
 actions.login = function(){
 
   firebaseRef.authWithOAuthPopup("github", function(error, authData){
-
     // handle the result of the authentication
     if (error) {
       console.log("Login Failed!", error);

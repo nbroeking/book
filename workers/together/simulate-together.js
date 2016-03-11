@@ -42,6 +42,19 @@ function randMessages(){
 	return messages[rand];
 }
 
+function randAttachment(){
+    var attachments = [
+        '//www.youtube.com/embed/YwmbbcMHiQ0',
+        '//www.youtube.com/embed/uawaDJ-b0_k',
+        0,0,0,0
+    ];
+    var rand = Math.floor(Math.random()*attachments.length);
+    return attachments[rand];
+}
+
+function randProfilePic(){
+    return 'http://lorempixel.com/100/100/people/';
+}
 
 function scoreIncrement(){
     var score = Math.floor(Math.random() * 6) 
@@ -58,6 +71,7 @@ function randomProbability() {
 function simulate(){
     var name = random_name()
     var chatName = randChatroom()
+    var profilePic = randProfilePic() + name.replace(/ +/g, "");
 
     var person = {
         name: name,
@@ -65,7 +79,8 @@ function simulate(){
         userName: name,
         isBlocked: 0,
         isAdmin: 0,
-        chatRoom: chatName
+        chatRoom: chatName,
+        profilePic: profilePic
     };
 
     login(person);
@@ -87,6 +102,7 @@ function simulate(){
             score: 0, 
             isTyping: 1,
             userName: person.name,
+            profilePic: person.profilePic,
             attachment: 0
         });
 
@@ -97,7 +113,8 @@ function simulate(){
                 score: scoreIncrement(), 
                 isTyping:0,
                 userName: person.name,
-                attachment: 0
+                profilePic: person.profilePic,
+                attachment: randAttachment()
             });
 
             setTimeout(function(){
@@ -120,7 +137,8 @@ function login(person){
     isBlocked: 0,
     isAdmin: 0,
     isLoggedin: 1,
-    chatRoom: person.chatRoom
+    chatRoom: person.chatRoom,
+    profilePic: person.profilePic
     });
 
 }

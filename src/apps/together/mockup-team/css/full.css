@@ -42,3 +42,8 @@ html, body {
     width:100%;
 }
 
+.attachment
+{
+  display: block;
+  height: 60px;
+}
