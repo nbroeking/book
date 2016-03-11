@@ -23,7 +23,7 @@ MyComponents.ChatBoxContent = ChatBoxContent
 class ChatBox extends React.Component {
   render(){
     return (
-      <MyComponents.Card content={<MyComponents.ChatBoxContent />}  sendButton={"Submit"} />
+      <MyComponents.Card content={<MyComponents.ChatBoxContent />} sendButton={"Submit"} />
       );
   }
 }

@@ -10,7 +10,7 @@ class Card extends React.Component {
               {this.props.content}
             </div>
             <div className="card-action">
-              <a href="#">{this.props.sendButton}</a>
+              <a className="waves-effect waves-light btn"><i className="material-icons left">send</i>{this.props.sendButton}</a>
             </div>
           </div>
         </div>

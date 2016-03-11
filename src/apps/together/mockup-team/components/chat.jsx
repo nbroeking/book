@@ -16,7 +16,7 @@ class ChatContent extends React.Component {
     var chats = Object.keys(curRoom.chats).map(function(p, i){
       var chatEntry = curRoom.chats[p]
       return (
-        <MyComponents.TextBubble score={chatEntry.score} text={chatEntry.userName + ": " + chatEntry.text} />
+        <MyComponents.TextBubble score={chatEntry.score} text={chatEntry.userName + ": " + chatEntry.text} attachment={chatEntry.attachment} profilePic={chatEntry.profilePic} />
          );
     })
 

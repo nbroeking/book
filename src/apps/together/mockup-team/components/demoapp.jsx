@@ -10,7 +10,7 @@ class App extends React.Component {
               <MyComponents.Chatrooms data={this.props.data}/>
             </div>
             <div className="col s8">
-              <MyComponents.Chat data = {this.props.data}/>
+              <MyComponents.Chat data={this.props.data}/>
             </div>
             <div className="col s8 offset-s4">
               <MyComponents.Chatbox />
