@@ -61,14 +61,13 @@ actions.login = function(){
       // create a user object based on authData
       var user = {
         displayName: authData.github.displayName,
-        username: authData.github.username,
+        userName: authData.github.username,
         id: authData.github.id,
         status: 'online',
-        pos: data.center,  // position, default to the map center
-        imgURL: authData.github.profileImageURL
+        profilePic: authData.github.profileImageURL
       }
       
-      var userRef = firebaseRef.child('users').child(user.username)
+      var userRef = firebaseRef.child('users').child(user.userName)
 
       // subscribe to the user data
       userRef.on('value', function(snapshot){

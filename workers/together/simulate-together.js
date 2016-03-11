@@ -46,7 +46,7 @@ function randAttachment(){
     var attachments = [
         '//www.youtube.com/embed/YwmbbcMHiQ0',
         '//www.youtube.com/embed/uawaDJ-b0_k',
-        0,0,0,0
+        0,0,0,0,0,0
     ];
     var rand = Math.floor(Math.random()*attachments.length);
     return attachments[rand];

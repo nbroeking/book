@@ -15,11 +15,9 @@ class TextBubble extends React.Component {
                  </span> 
   	          </div>
               <br></br>
-              <div className="col s6 offset-s1">
                 <div className="video-container attachment">
                   <iframe width="853" height="480" src={this.props.attachment} frameBorder="0" allowFullScreen></iframe>
                 </div>
-              </div>
   	        </div>
           </div>
         );
