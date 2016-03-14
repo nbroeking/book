@@ -1,0 +1,49 @@
+.full {
+    height:80%;
+}
+
+html, body {
+    height: 100%;    
+}
+
+#chatbox
+{
+    height:300px;
+    overflow-y: auto;
+}
+#topics
+{
+    height:300px;
+    overflow-y: auto;
+}
+.textbubble
+{
+    width:100%;
+}
+.nomargin
+{
+	margin-right:0;
+	margin-left:0;
+	padding-left:0;
+	padding-right:0;
+}
+.onlineIcon
+{
+    margin-right:0;
+    padding-right:0;
+}
+.btn
+{
+    width:40px;
+    height:30px;
+}
+.fullWidth
+{
+    width:100%;
+}
+
+.attachment
+{
+  display: block;
+  height: 60px;
+}
