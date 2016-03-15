@@ -18,8 +18,6 @@ var actions = {}
 // needs to to re-rendered
 // 'data' and 'actions' are injected into the app
 function render(){
-<<<<<<< HEAD
-  console.log("Trying to render the page")
   if( data.user == null){
     console.log("There is no user so render the splash page");
     ReactDOM.render(
