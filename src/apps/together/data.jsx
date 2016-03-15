@@ -18,8 +18,8 @@ var actions = {}
 // needs to to re-rendered
 // 'data' and 'actions' are injected into the app
 function render(){
-  
-  if( user == null){
+  console.log("Trying to render the page")
+  if( data.user == null){
     console.log("There is no user so render the splash page");
     ReactDOM.render(
       <MyComponents.Splash
@@ -54,27 +54,25 @@ function render(){
 //
 var firebaseRef = new Firebase('https://chattykathyucdd2.firebaseio.com')
 
-var prefix = 'https://chattykathyucdd2.firebaseio.com'
-
 // Real-time Data (load constantly on changes)
-firebaseRef.child('chatrooms')
+/*firebaseRef.child('chatrooms')
   .on('value', function(snapshot){
 
     data.chatrooms = _.values(snapshot.val())
 
     render()
 
-  })
+  })*/
 
 // Real-time Data (load constantly on changes)
-firebaseRef.child('users')
+/*firebaseRef.child('users')
   .on('value', function(snapshot){
 
     data.users = _.values(snapshot.val())
 
     render()
 
-  })
+  })*/
 
 //
 // ACTIONS
@@ -147,10 +145,10 @@ actions.submit = function(chatid, text, attachment){
 }
 
 actions.startedTyping = function(chatid){
-  //TODO: CREATE CHAT
+  //TODO: CREATE CHAT returns chatID
 }
 
 actions.stoppedTyping = function(chatid){
-  //TODO: DELETE CHAT
+  //TODO: DELETE CHAT 
 }
 render();
