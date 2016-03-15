@@ -1,4 +1,4 @@
-class App extends React.Component {
+class AdminApp extends React.Component {
   render(){
     return (
       <div>
@@ -11,4 +11,4 @@ class App extends React.Component {
   }
 }
 
-MyComponents.App = App
+MyComponents.AdminApp = AdminApp
