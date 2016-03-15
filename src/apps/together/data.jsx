@@ -52,26 +52,17 @@ function render(){
 // DATA
 //
 var firebaseRef = new Firebase('https://chattykathyucdd2.firebaseio.com')
+var chatroomRef = null
 
-// Real-time Data (load constantly on changes)
-/*firebaseRef.child('chatrooms')
-  .on('value', function(snapshot){
+function updateChatroom(ref){
+  data.chatroom = ref
+  render()
+}
 
-    data.chatrooms = _.values(snapshot.val())
-
-    render()
-
-  })*/
-
-// Real-time Data (load constantly on changes)
-/*firebaseRef.child('users')
-  .on('value', function(snapshot){
-
-    data.users = _.values(snapshot.val())
-
-    render()
-
-  })*/
+//Get the chatroom names
+firebaseRef.child('chatroomNames').on('value', function(ref){
+  data.chatrooms = _.values(ref)
+})
 
 //
 // ACTIONS
@@ -138,33 +129,72 @@ actions.logout = function(){
 // ================
 
 actions.createChatroom = function(name){
-  //TODO: CREATE CHATROOM
+  
   console.log("Should Create a chatroom in the firebase" + name)
+  var room = firebaseRef.child("chatroomNames/" + name)
+  room.set(name)
+  render()
 }
 
 actions.changeToChatroom = function(name){
   //TODO: Change the chatroom for the current user. 
+  changeTo = name
+  if( name == null){
+    changeTo = "default"
+  }
+  if( chatroomRef != null){
+    firebaseRef.off('value', chatroomRef)
+  }
+  data.chatroom = null
+  chatroomRef = firebaseRef.child("chatrooms/" + changeTo ).on('value', updateChatroom)
 }
 
-actions.submit = function(chatid, text, attachment){
-  //TODO: SUBMIT TEXT
+//If you submit text you do not need to call stopped Typing
+actions.submit = function(messageRef, text, attachment){
   console.log("Submit Text: "+ text + " with attachment " + attachment)
+  
+  messageRef.update({
+    text: text, 
+    isTyping: 0,
+    attachment: attachment
+  });
+  return messageRef
 }
 
+//Returns the messageref to be passed to stoppedTyping or to submit
 actions.startedTyping = function(chatid){
-  //TODO: CREATE CHAT returns chatID
+//returns chatID
+  
+  var messageRef = chatRoomRef.child('chats').push()
+  messageRef.set({
+    text: "", 
+    score: 0, 
+    isTyping: 1,
+    userName: user.userName,
+    profilePic: user.profilePic,
+    attachment: 0
+  });
+  
+  return messageRef;
 }
 
-actions.stoppedTyping = function(chatid){
-  //TODO: DELETE CHAT 
+//Deletes the chat in the case that the user does not submit any text
+actions.stoppedTyping = function(messegeRef){
+  messegeRef.remove()
 }
 
-actions.upVoteMsg = function(msgid){
-  //TODO: Upvote Msg 
+actions.upVoteMsg = function(msgRef, value){
+   msgRef.update({
+    score: value, 
+  });
+  return msgRef
 }
 
-actions.downVoteMsg = function(msgid){
-  //TODO: Downvote Msg 
+actions.downVoteMsg = function(msgid, value){
+  msgRef.update({
+    score: value, 
+  });
+  return msgid
 }
 
 // ================

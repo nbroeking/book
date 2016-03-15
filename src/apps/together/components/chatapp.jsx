@@ -10,13 +10,13 @@ class ChatApp extends React.Component {
         <div className="container">
           <br></br>
           <div className="row">
-            <div className="col s4">
-              <MyComponents.Chatrooms data={this.props.data}/>
+            <div className="col s2">
+              <MyComponents.Chatrooms data={this.props.data} actions={this.props.actions}/>
             </div>
-            <div className="col s8">
+            <div className="col s10">
               <MyComponents.Chat data={this.props.data}/>
             </div>
-            <div className="col s8 offset-s4">
+            <div className="col s12 offset-s4">
               <MyComponents.Chatbox data={this.props.data}/>
             </div>
           </div>
