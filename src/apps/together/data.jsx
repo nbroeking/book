@@ -133,9 +133,17 @@ actions.logout = function(){
   }
 }
 
+// ================
+// Chatroom Actions
+// ================
+
 actions.createChatroom = function(name){
   //TODO: CREATE CHATROOM
   console.log("Should Create a chatroom in the firebase" + name)
+}
+
+actions.changeToChatroom = function(name){
+  //TODO: Change the chatroom for the current user. 
 }
 
 actions.submit = function(chatid, text, attachment){
@@ -149,6 +157,30 @@ actions.startedTyping = function(chatid){
 
 actions.stoppedTyping = function(chatid){
   //TODO: DELETE CHAT 
+}
+
+actions.upVoteMsg = function(msgid){
+  //TODO: Upvote Msg 
+}
+
+actions.downVoteMsg = function(msgid){
+  //TODO: Downvote Msg 
+}
+
+// ================
+// Admin Actions
+// ================
+
+actions.toggleBan = function(userID){
+  //TODO: Toggle Ban for User
+}
+
+actions.clearUsers = function(){
+  //TODO: Remove all users from firebase
+}
+
+actions.clearRooms = function(){
+  //TODO: Remove all rooms from firebase
 }
 
 render();
