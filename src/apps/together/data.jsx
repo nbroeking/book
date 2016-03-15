@@ -90,7 +90,7 @@ actions.login = function(){
         displayName: authData.github.displayName,
         userName: authData.github.username,
         id: authData.github.id,
-        status: 'online',
+        isLoggedIn: 'online',
         profilePic: authData.github.profileImageURL
       }
       
@@ -125,7 +125,7 @@ actions.logout = function(){
     userRef.off()
 
     // set the user's status to offline
-    userRef.child('status').set('offline')
+    userRef.child('isLoggedIn').set('0')
 
     data.user = null
 
@@ -150,4 +150,5 @@ actions.startedTyping = function(chatid){
 actions.stoppedTyping = function(chatid){
   //TODO: DELETE CHAT 
 }
+
 render();
