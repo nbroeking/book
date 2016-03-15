@@ -19,7 +19,7 @@ var actions = {}
 // 'data' and 'actions' are injected into the app
 function render(){
   
-  if( user == null){
+  if(user == null){
     console.log("There is no user so render the splash page");
     ReactDOM.render(
       <MyComponents.Splash
