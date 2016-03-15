@@ -1,9 +1,14 @@
 // a single 'data' object that holds the data of your entire app, with initial values
+var State = {
+  ADMIN: 0,
+  CHATS: 1
+}
+
 var data = {
-  selectedRoom: "School",
   chatrooms: {},
-  users: {},
-  user: null
+  chatroom: null,
+  user: null,
+  State: State.CHATS
 }
 
 // a single 'handlers' object that holds all the actions of your entire app
@@ -13,12 +18,29 @@ var actions = {}
 // needs to to re-rendered
 // 'data' and 'actions' are injected into the app
 function render(){
-  ReactDOM.render(
-    <MyComponents.App
-        data={data}
-        actions={actions}/>,
-    $('#app-container').get(0)
-  )
+  
+  if( user == null){
+    console.log("There is no user so render the splash page");
+  }
+  else{
+    if( data.State == State.CHATS){
+        ReactDOM.render(
+          <MyComponents.ChatApp
+            data={data}
+            actions={actions}/>,
+          $('#app-container').get(0)
+        )
+    }
+    else if(data.State == State.ADMIN){
+        ReactDOM.render(
+          <MyComponents.AdminApp
+            data={data}
+            actions={actions}/>,
+          $('#app-container').get(0)
+        )
+    }
+  }
+
 }
 
 //
