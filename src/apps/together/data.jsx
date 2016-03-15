@@ -21,6 +21,12 @@ function render(){
   
   if( user == null){
     console.log("There is no user so render the splash page");
+    ReactDOM.render(
+      <MyComponents.Splash
+        data={data}
+        actions={actions}/>,
+      $('#app-container').get(0)
+    )
   }
   else{
     if( data.State == State.CHATS){
@@ -47,6 +53,8 @@ function render(){
 // DATA
 //
 var firebaseRef = new Firebase('https://chattykathyucdd2.firebaseio.com')
+
+var prefix = 'https://chattykathyucdd2.firebaseio.com'
 
 // Real-time Data (load constantly on changes)
 firebaseRef.child('chatrooms')
@@ -128,4 +136,21 @@ actions.logout = function(){
   }
 }
 
+actions.createChatroom = function(name){
+  //TODO: CREATE CHATROOM
+  console.log("Should Create a chatroom in the firebase" + name)
+}
+
+actions.submit = function(chatid, text, attachment){
+  //TODO: SUBMIT TEXT
+  console.log("Submit Text: "+ text + " with attachment " + attachment)
+}
+
+actions.startedTyping = function(chatid){
+  //TODO: CREATE CHAT
+}
+
+actions.stoppedTyping = function(chatid){
+  //TODO: DELETE CHAT
+}
 render();
