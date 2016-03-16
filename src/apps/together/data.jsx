@@ -5,7 +5,7 @@ var State = {
 }
 
 var data = {
-  chatrooms: {},
+  chatrooms: [],
   chatroom: null,
   user: null,
   State: State.CHATS
@@ -61,7 +61,15 @@ function updateChatroom(ref){
 
 //Get the chatroom names
 firebaseRef.child('chatroomNames').on('value', function(ref){
-  data.chatrooms = _.values(ref)
+  console.log("Raw", ref)
+  console.log("Val", ref.val())
+  
+  data.chatrooms = _.values(ref.val())
+  
+  console.log("Chatroom updated ", data.chatrooms)
+  //for( val x in data.chatrooms){
+    //console.log("Individual ")
+  //}
 })
 
 //
@@ -137,16 +145,16 @@ actions.createChatroom = function(name){
 }
 
 actions.changeToChatroom = function(name){
-  //TODO: Change the chatroom for the current user. 
-  changeTo = name
+  console.log("Requesting to view chatroom ", name)
+  data.changeTo = name
   if( name == null){
-    changeTo = "default"
+    data.changeTo = "default"
   }
   if( chatroomRef != null){
     firebaseRef.off('value', chatroomRef)
   }
   data.chatroom = null
-  chatroomRef = firebaseRef.child("chatrooms/" + changeTo ).on('value', updateChatroom)
+  chatroomRef = firebaseRef.child("chatrooms/" + data.changeTo ).on('value', updateChatroom)
 }
 
 //If you submit text you do not need to call stopped Typing

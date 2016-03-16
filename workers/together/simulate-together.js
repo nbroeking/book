@@ -87,7 +87,10 @@ function simulate(){
 
     setTimeout(function(){
         var ref = new Firebase(firebaseURL);
-        
+       
+        var names = ref.child("chatroomNames/" + chatName);
+        names.set(chatName);
+         
         var chatRoomRef = ref.child("chatrooms/"+ chatName);
         var messageRef = chatRoomRef.child("chats").push();
         

@@ -1,17 +1,29 @@
 class Content extends React.Component {
   render(){
-    console.log("Redrawing List...")
-    var chatrooms = this.props.data.chatrooms.map(function(p, i){
-        console.log("NAME:" + p.name)
-    return (
-        <a href="#!" className="collection-item">{p.name}</a>
-       );
-    })
-    return (
-      <div className="collection" id="topics">
-        {chatrooms}
-      </div>
-    );
+    console.log("Trying to draw chatroom names")
+    if( this.props.data.chatrooms){
+      console.log("Redrawing List...")
+      
+      var func = this.props.actions.changeToChatroom
+      var chatrooms = this.props.data.chatrooms.map(function(name){
+        console.log("Chatroom: " + name)
+        return (
+          <a href="#!" className="collection-item" onClick={() => func(name)}>{name}</a>
+        );
+      });
+      
+      return (
+        <div className="collection" id="topics">
+          {chatrooms}
+        </div>
+      );
+    } else{
+      return (
+        <div className="collection" id="topics">
+          <a href="#!" className="collection-item">There are no chatrooms!</a>
+        </div>
+      );
+    }
   }
 }
 MyComponents.ChatroomsContent = Content
@@ -20,7 +32,7 @@ class ChatRooms extends React.Component {
   render(){
     return (
       <div>
-        <MyComponents.Card title={"Select Chatroom to Talk"} content={<MyComponents.ChatroomsContent data = {this.props.data}/>}/>
+        <MyComponents.Card title={"Select Chatroom to Talk"} content={<MyComponents.ChatroomsContent actions = {this.props.actions} data = {this.props.data}/>}/>
       </div>
       );
   }
