@@ -11,9 +11,17 @@ class ChatContent extends React.Component {
         var chatEntry = curRoom.chats[p]
         console.log("chatEntry", chatEntry)
         console.log("other", i)
+        
+        if( chatEntry.isTyping == 0){
         return (
-          <MyComponents.TextBubble score={chatEntry.score} text={chatEntry.userName + ": " + chatEntry.text} attachment={chatEntry.attachment} profilePic={chatEntry.profilePic} />
+          <MyComponents.TextBubble key={i} score={chatEntry.score} text={chatEntry.userName + ": " + chatEntry.text} attachment={chatEntry.attachment} profilePic={chatEntry.profilePic} />
           );
+        }
+        else{
+          return(
+          <MyComponents.TextBubble key={i} score={chatEntry.score} text={chatEntry.userName + " is typing ..." } attachment={chatEntry.attachment} profilePic={chatEntry.profilePic} />
+          );
+        }
       })
 
       // Actually display everything. 
@@ -27,7 +35,6 @@ class ChatContent extends React.Component {
   else{
     return(
       <div className="collection waxz" id="chatbox">
-        
       </div>
       )
     }
