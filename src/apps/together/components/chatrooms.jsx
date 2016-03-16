@@ -4,12 +4,21 @@ class Content extends React.Component {
     if( this.props.data.chatrooms){
       console.log("Redrawing List...")
       
+      var curChat = this.props.data.chatroom;
+      
       var func = this.props.actions.changeToChatroom
       var chatrooms = this.props.data.chatrooms.map(function(name){
         console.log("Chatroom: " + name)
-        return (
-          <a href="#!" className="collection-item" onClick={() => func(name)}>{name}</a>
-        );
+
+        if( (curChat) && name == curChat.name){
+          return (
+            <a href="#!" className="collection-item active" onClick={() => func(name)}>{name}</a>
+          );
+        }else{
+           return (
+            <a href="#!" className="collection-item" onClick={() => func(name)}>{name}</a>
+          );                                         
+        }
       });
       
       return (
