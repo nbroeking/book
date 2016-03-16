@@ -205,6 +205,16 @@ actions.downVoteMsg = function(msgid, value){
   return msgid
 }
 
+actions.changepage = function(page){
+  console.log("Change page to " + page)
+  if( page == "admin"){
+    data.State = State.ADMIN;
+  }
+  else{
+    data.State = State.CHATS;
+  }
+  render();
+}
 // ================
 // Admin Actions
 // ================
