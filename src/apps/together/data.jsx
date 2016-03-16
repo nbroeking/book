@@ -55,7 +55,7 @@ var firebaseRef = new Firebase('https://chattykathyucdd2.firebaseio.com')
 var chatroomRef = null
 
 function updateChatroom(ref){
-  data.chatroom = ref
+  data.chatroom = ref.val()
   render()
 }
 
