@@ -8,8 +8,9 @@ class ChatContent extends React.Component {
       console.log("chatroom", curRoom)  
       // Display the current chat boxes
       var chats = Object.keys(curRoom.chats).map(function(p, i){
-        var chatEntry = p
+        var chatEntry = curRoom.chats[p]
         console.log("chatEntry", chatEntry)
+        console.log("other", i)
         return (
           <MyComponents.TextBubble score={chatEntry.score} text={chatEntry.userName + ": " + chatEntry.text} attachment={chatEntry.attachment} profilePic={chatEntry.profilePic} />
           );
