@@ -201,16 +201,25 @@ actions.downVoteMsg = function(msgid, value){
 // Admin Actions
 // ================
 
-actions.toggleBan = function(userID){
+actions.banUser = function(userRef){
   //TODO: Toggle Ban for User
+  userRef.child('isBanned').set('0')
+}
+actions.unBanUser = function(userRef){
+  //TODO: Toggle Ban for User
+  userRef.child('isBanned').set('1')
 }
 
 actions.clearUsers = function(){
   //TODO: Remove all users from firebase
+  var usersRef = firebaseRef.child("users")
+  usersRef.remove(); 
 }
 
 actions.clearRooms = function(){
   //TODO: Remove all rooms from firebase
+  var chatroomsRef = firebaseRef.child("chatrooms")
+  chatroomsRef.remove(); 
 }
 
 render();
