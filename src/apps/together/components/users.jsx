@@ -1,8 +1,12 @@
 class BannedList extends React.Component {
   render(){
+      console.log(this.props)
+      var func = this.props.actions.unBanUser
       var users = this.props.data.map(function(p,i){
-          if (p.isBlocked){
+
+          if (p.isBlocked && !p.isAdmin){
             var imgUrl = "images/online-" + p.isLoggedin + ".png";
+
             return (<div className="chip fullWidth">
                 <div className="row">
                   <div className="col s1">
@@ -12,7 +16,7 @@ class BannedList extends React.Component {
                     {p.userName}
                   </div>
                   <div className="col s2">
-                    <a href="#">UNBAN</a>
+                    <a href="#" onClick={() => func(p)}>UNBAN</a>
                   </div>
                   <div className="col s2">
                      <img className="right onlineIcon" src={imgUrl} height="10" width="10"></img>
@@ -58,6 +62,7 @@ MyComponents.AdminList = AdminList
 class UserList extends React.Component {
   render(){
       //console.log(this.props.data)
+      var func = this.props.actions.banUser
 
       var users = this.props.data.map(function(p,i){
           if (!p.isAdmin && !p.isBlocked)
@@ -72,7 +77,7 @@ class UserList extends React.Component {
                     {p.userName}
                   </div>
                   <div className="col s2">
-                    <a href="#">BAN</a>
+                    <a href="#" onClick={() => func(p)}>BAN</a>
                   </div>
                   <div className="col s2">
                      <img className="right onlineIcon" src={imgUrl} height="10" width="10"></img>
@@ -97,19 +102,19 @@ class Users extends React.Component {
         <div className="col s4">
           <h3>Users</h3>
           <ul>
-            <MyComponents.UserList data={this.props.data}/>
+            <MyComponents.UserList data={this.props.data} actions={this.props.actions}/>
           </ul>
         </div>
         <div className="col s4">
           <h3>Admins</h3>
           <ul>
-            <MyComponents.AdminList data={this.props.data}/>
+            <MyComponents.AdminList data={this.props.data} actions={this.props.actions}/>
           </ul>
         </div>
         <div className="col s4">
           <h3>Banned</h3>
           <ul>
-            <MyComponents.BannedList data={this.props.data}/>
+            <MyComponents.BannedList data={this.props.data} actions={this.props.actions}/>
           </ul>
         </div>
       </div>

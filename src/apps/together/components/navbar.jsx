@@ -2,7 +2,6 @@ class NavBar extends React.Component {
 
   render(){
     if(this.props.data.user){
-      
       var func = this.props.actions.changepage
       
       return (

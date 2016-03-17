@@ -80,6 +80,7 @@ firebaseRef.child('users').on('value', function(ref){
   //for( val x in data.chatrooms){
     //console.log("Individual ")
   //}
+  render()
 })
 //
 // ACTIONS
@@ -99,6 +100,8 @@ actions.login = function(){
         userName: authData.github.username,
         id: authData.github.id,
         isLoggedIn: 'online',
+        isBlocked: '0',
+        isAdmin: '0',
         profilePic: authData.github.profileImageURL
       }
       
@@ -247,13 +250,22 @@ actions.changepage = function(page){
 // Admin Actions
 // ================
 
-actions.banUser = function(userRef){
+actions.banUser = function(user){
   //TODO: Toggle Ban for User
-  userRef.child('isBanned').set('0')
+  console.log("banning:" + user.name)
+  var userRef = firebaseRef.child("users/"+user.userName)
+  userRef.update({
+    isBlocked:1
+  });
+  render();
 }
-actions.unBanUser = function(userRef){
+actions.unBanUser = function(user){
   //TODO: Toggle Ban for User
-  userRef.child('isBanned').set('1')
+  var userRef = firebaseRef.child("users/"+user.userName)
+  userRef.update({
+    isBlocked:0
+  });
+  render();
 }
 
 actions.clearUsers = function(){
