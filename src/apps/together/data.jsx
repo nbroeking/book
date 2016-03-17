@@ -8,7 +8,7 @@ var data = {
   chatrooms: [],
   chatroom: null,
   user: null,
-  State: State.CHATS
+  State: State.CHATS,
 }
 
 // a single 'handlers' object that holds all the actions of your entire app
@@ -158,6 +158,11 @@ actions.changeToChatroom = function(name){
 
 //If you submit text you do not need to call stopped Typing
 actions.submit = function(messageRef, text, attachment){
+  
+  if( messageRef == null){
+    console.warn("Can not submit message that doesnt exist ");
+    return null;
+  }
   console.log("Submit Text: "+ text + " with attachment " + attachment)
   
   messageRef.update({
@@ -169,16 +174,22 @@ actions.submit = function(messageRef, text, attachment){
 }
 
 //Returns the messageref to be passed to stoppedTyping or to submit
-actions.startedTyping = function(chatid){
+actions.startedTyping = function(){
 //returns chatID
-  
-  var messageRef = chatRoomRef.child('chats').push()
+  if( data.chatroom == null){
+    console.warn("There is no chatroom to type too");
+    return null;
+  }
+  else{
+    console.log("we should be able to save the message ref")
+  }
+  var messageRef = firebaseRef.child("chatrooms/"+data.chatroom.name).child('chats').push()
   messageRef.set({
     text: "", 
     score: 0, 
     isTyping: 1,
-    userName: user.userName,
-    profilePic: user.profilePic,
+    userName: data.user.userName,
+    profilePic: data.user.profilePic,
     attachment: 0
   });
   
@@ -187,7 +198,15 @@ actions.startedTyping = function(chatid){
 
 //Deletes the chat in the case that the user does not submit any text
 actions.stoppedTyping = function(messegeRef){
+  if( messegeRef == null){
+    console.warn("Cant stop typing a message that doesn't exist")
+    return null;
+  }
+  else{
+    console.log("We should be able to delete the typing")
+  }
   messegeRef.remove()
+  return null;
 }
 
 actions.upVoteMsg = function(msgRef, value){
