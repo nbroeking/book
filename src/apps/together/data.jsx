@@ -6,6 +6,7 @@ var State = {
 
 var data = {
   chatrooms: [],
+  users: [],
   chatroom: null,
   user: null,
   State: State.CHATS,
@@ -71,6 +72,15 @@ firebaseRef.child('chatroomNames').on('value', function(ref){
   //}
 })
 
+firebaseRef.child('users').on('value', function(ref){
+  
+  data.users = _.values(ref.val())
+  
+  console.log("Users updated ", data.users)
+  //for( val x in data.chatrooms){
+    //console.log("Individual ")
+  //}
+})
 //
 // ACTIONS
 //

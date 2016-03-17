@@ -90,6 +90,8 @@ MyComponents.UserList = UserList
 
 class Users extends React.Component {
   render(){
+    console.log("users got:")
+    console.log(this.props.data)
     return (
       <div className="row userRow">
         <div className="col s4">

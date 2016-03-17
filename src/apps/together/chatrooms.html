@@ -34,13 +34,9 @@
 
       $(document).ready(function(){
         $(".button-collapse").sideNav();
-        $('.collapsible').collapsible({
-          accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-        });
       });
     </script>
 
-    <!-- import each component class in components/ -->
     <!-- import each component class in components/ -->
     <!-- The order is important. Dependencies must be loaded first -->
     <script type="text/babel" src="components/textBubble.jsx"></script>
@@ -49,12 +45,11 @@
     <script type="text/babel" src="components/chat.jsx"></script>
     <script type="text/babel" src="components/card.jsx"></script>
     <script type="text/babel" src="components/navbar.jsx"></script>
-    <script type="text/babel" src="components/splash.jsx"></script>
     <script type="text/babel" src="components/users.jsx"></script>
+    <script type="text/babel" src="components/adminApp.jsx"></script>
+
     <!-- Main app container -->
-    
-    <script type="text/babel" src="components/adminapp.jsx"></script>
-    <script type="text/babel" src="components/chatapp.jsx"></script>
+    <script type="text/babel" src="components/demoapp.jsx"></script>
 
     <!-- Connect the app and data -->
     <script type="text/babel" src="data.jsx"></script>
