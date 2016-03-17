@@ -6,9 +6,15 @@ class Splash extends React.Component {
           data={this.props.data} 
           actions={this.props.actions} 
           user={this.props.user}/>
-        <div className="container">
-         <h3>TODO: BUILD A SPLASH PAGE</h3>
-        </div>
+        <div className="center-align">
+        <div className="row">
+          <div className="col s4 offset-s4">
+            <form className="card">
+              <span className="card-title">Login to ChattyKathy</span>
+              <p></p>
+              <span onClick={this.props.actions.login} className="waves-effect waves-light btn">Login</span>
+            </form>
+          </div></div></div>
       </div>
       );
   }
