@@ -4,8 +4,8 @@ class Card extends React.Component {
     if( this.props.sendButton){
 
       var func = this.props.action
-      console.log(func)
-      
+      console.log(this.props)
+
       return (
         <div className="card grey">
           <div className="card-content white-text">
