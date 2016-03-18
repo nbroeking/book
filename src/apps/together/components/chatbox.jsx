@@ -1,6 +1,24 @@
 var characterCount = 0;
 var currentMessageRef = null;
+var submitAction = null;
 
+function submit(){
+  var text = document.getElementById("icon_prefix_text").value;
+  var attachment = document.getElementById("icon_prefix").value;
+  
+  if( submitAction){
+    submitAction(currentMessageRef, text, attachment);
+    currentMessageRef = null;
+    characterCount = 0;
+    
+    document.getElementById("icon_prefix_text").value = null;
+    attachment = document.getElementById("icon_prefix").value = null;
+  }
+  else{
+    conosle.log("Submit action is null");
+  }
+  
+}
 class ChatBoxContent extends React.Component {
 
   componentDidMount(){
@@ -8,6 +26,7 @@ class ChatBoxContent extends React.Component {
     
     var data = this.props.data;
     var actions = this.props.actions;
+    submitAction = this.props.actions.submit;
     
     window.addEventListener('input', function(){
       var text = document.getElementById("icon_prefix_text").value;
@@ -52,7 +71,7 @@ MyComponents.ChatBoxContent = ChatBoxContent
 class ChatBox extends React.Component {
   render(){
     return (
-      <MyComponents.Card content={<MyComponents.ChatBoxContent data={this.props.data} actions={this.props.actions}/>} actions={this.props.actions.submit} sendButton={"Submit"} />
+      <MyComponents.Card content={<MyComponents.ChatBoxContent data={this.props.data} actions={this.props.actions}/>} action={submit} sendButton={"Submit"} />
       );
   }
 }

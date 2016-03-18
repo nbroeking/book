@@ -176,7 +176,7 @@ actions.submit = function(messageRef, text, attachment){
     console.warn("Can not submit message that doesnt exist ");
     return null;
   }
-  if(data.user.isBlocked){
+  if(data.user.isBlocked == "1"){
     console.warn("Can not submit message because user is banned ");
     return null;
   }
@@ -195,6 +195,10 @@ actions.startedTyping = function(){
 //returns chatID
   if( data.chatroom == null){
     console.warn("There is no chatroom to type too");
+    return null;
+  }
+  if(data.user.isBlocked == "1"){
+    console.warn("Can not start typing message because user is banned ");
     return null;
   }
   else{
