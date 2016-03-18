@@ -20,11 +20,12 @@ Everything I've learned from UCDD 2 - Spring 2016.
 * Together
   * [Mockup](apps/together/mockup)
     * [Data Models](apps/together/mockup/data.html)
-  * [Mockup Team](apps/together/mockup-team) <span class="chip red">NEW</span>        
-  * [ReactJS](apps/together)
+  * [Mockup Team](apps/together/mockup-team)       
+  * [ReactJS](apps/together) <span class="chip red">NEW</span> 
 
 ## Learning
-* [Week 8](learning/week8) <span class="chip red">NEW</span>
+* [Week 10](learning/week10)  <span class="chip red">NEW</span> 
+* [Week 8](learning/week8) 
 * [Week 7](learning/week7)
 * [Week 6](learning/week6)
 * [Week 5](learning/week5)
@@ -35,7 +36,7 @@ Everything I've learned from UCDD 2 - Spring 2016.
 * [Intro](learning/intro)
 
 ## Hackathons
-* [02-29](hackathons/02-29) <span class="chip red">NEW</span>
+* [02-29](hackathons/02-29)
 * [02-22](hackathons/02-22)
 * [02-15](hackathons/02-15)
 * [02-08](hackathons/02-08)
