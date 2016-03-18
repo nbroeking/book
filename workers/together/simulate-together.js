@@ -164,5 +164,5 @@ function clear(){
 clear();
 
 // run every half second
-setInterval(simulate, 5000);
+setInterval(simulate, 10000);
 setInterval(clear, 10000000); //Clear the database out every 100000 seconds
