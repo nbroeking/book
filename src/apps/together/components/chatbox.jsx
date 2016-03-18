@@ -20,8 +20,7 @@ function submit(){
   
 }
 class ChatBoxContent extends React.Component {
-
-  componentDidMount(){
+  componentDidMount() {
     console.log("THe chat box content mounted!!!")
     
     var data = this.props.data;
@@ -46,7 +45,6 @@ class ChatBoxContent extends React.Component {
       }
     });
   }
-  
   render(){
     return (
       <div className="collection"> 

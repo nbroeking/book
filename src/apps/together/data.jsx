@@ -184,7 +184,7 @@ actions.changeToChatroom = function(name){
 //If you submit text you do not need to call stopped Typing
 actions.submit = function(messageRef, text, attachment){
   
-  if( messageRef == null){
+  if(messageRef == null){
     console.warn("Can not submit message that doesnt exist ");
     return null;
   }
@@ -217,6 +217,7 @@ actions.startedTyping = function(){
     console.log("we should be able to save the message ref")
   }
   var messageRef = firebaseRef.child("chatrooms/"+data.chatroom.name).child('chats').push()
+  console.log("messageRef: " + messageRef);
   messageRef.set({
     text: "", 
     score: 0, 
@@ -243,13 +244,15 @@ actions.stoppedTyping = function(messegeRef){
 }
 
 actions.upVoteMsg = function(msgRef, value){
-   msgRef.update({
+  console.log("upvote function" + score)
+  msgRef.update({
     score: value, 
   });
   return msgRef
 }
 
 actions.downVoteMsg = function(msgid, value){
+  console.log("downvote function" + score)
   msgRef.update({
     score: value, 
   });

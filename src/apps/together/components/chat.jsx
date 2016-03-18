@@ -12,12 +12,22 @@ class ChatContent extends React.Component {
         
         if( chatEntry.isTyping == 0){
         return (
-          <MyComponents.TextBubble key={i} score={chatEntry.score} text={chatEntry.userName + ": " + chatEntry.text} attachment={chatEntry.attachment} profilePic={chatEntry.profilePic} />
+          <MyComponents.TextBubble 
+            key={i} 
+            score={chatEntry.score} 
+            text={chatEntry.userName + ": " + chatEntry.text} 
+            attachment={chatEntry.attachment} 
+            profilePic={chatEntry.profilePic}/>
           );
         }
         else{
           return(
-          <MyComponents.TextBubble key={i} score={chatEntry.score} text={chatEntry.userName + " is typing ..." } attachment={chatEntry.attachment} profilePic={chatEntry.profilePic} />
+          <MyComponents.TextBubble 
+            key={i} 
+            score={chatEntry.score} 
+            text={chatEntry.userName + " is typing ..." } 
+            attachment={chatEntry.attachment} 
+            profilePic={chatEntry.profilePic}/>
           );
         }
       })
@@ -47,7 +57,15 @@ class Chat extends React.Component {
     if( this.props.data.chatroom){
       return (
         <div>
-          <MyComponents.Card title={this.props.data.chatroom.name} content={<MyComponents.ChatContent data={this.props.data}/>}/>
+          <MyComponents.Card 
+            title={this.props.data.chatroom.name} 
+            content={
+              <MyComponents.ChatContent 
+                data={this.props.data} 
+                actions={this.props.actions}
+              />
+            }
+          />
         </div>
         );
     }
