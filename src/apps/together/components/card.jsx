@@ -2,6 +2,10 @@ class Card extends React.Component {
 
   render(){
     if( this.props.sendButton){
+
+      var func = this.props.action
+      console.log(func)
+      
       return (
         <div className="card grey">
           <div className="card-content white-text">
@@ -10,7 +14,7 @@ class Card extends React.Component {
               {this.props.content}
             </div>
             <div className="card-action">
-              <a className="waves-effect waves-light btn"><i className="material-icons left">send</i>{this.props.sendButton}</a>
+              <a className="waves-effect waves-light btn" onClick={() => func()}><i className="material-icons left">send</i>{this.props.sendButton}</a>
             </div>
           </div>
         </div>

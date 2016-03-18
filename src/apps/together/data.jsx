@@ -176,6 +176,10 @@ actions.submit = function(messageRef, text, attachment){
     console.warn("Can not submit message that doesnt exist ");
     return null;
   }
+  if(data.user.isBlocked){
+    console.warn("Can not submit message because user is banned ");
+    return null;
+  }
   console.log("Submit Text: "+ text + " with attachment " + attachment)
   
   messageRef.update({
