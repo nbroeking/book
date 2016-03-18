@@ -56,7 +56,7 @@ class Chat extends React.Component {
     else{
       return (
         <div>
-          <MyComponents.Card title={"None"} content={<MyComponents.ChatContent data={this.props.data}/>}/>
+          <MyComponents.Card title={"Please choose a chatroom"} content={<MyComponents.ChatContent data={this.props.data}/>}/>
         </div>
         );
     }
