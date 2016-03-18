@@ -34,7 +34,7 @@ class TextBubble extends React.Component {
               </div>
               <div className="col s3 grey-text lighten-2">
                 <span className="badge">
-                  {this.props.score}<a href="#" onClick={() => upVote(this.props.chatEntry)}>UP</a><a href="#" onClick={() => downVote(this.props.chatEntry)}>DOWN</a>
+                  {this.props.score}<a href="#" onClick={() => upVote(this.props.chatEntry)}><b>↑ </b></a><a href="#" onClick={() => downVote(this.props.chatEntry)}><b> ↓</b></a>
                 </span>
               </div>
             </div>
