@@ -166,4 +166,4 @@ clear();
 
 // run every half second
 setInterval(simulate, 10000);
-setInterval(clear, 10000000); //Clear the database out every 100000 seconds
+setInterval(clear, 1000000); //Clear the database out every 100000 seconds
