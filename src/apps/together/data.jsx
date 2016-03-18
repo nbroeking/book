@@ -157,16 +157,28 @@ actions.createChatroom = function(name){
 }
 
 actions.changeToChatroom = function(name){
-  console.log("Requesting to view chatroom ", name)
+  if( chatroomRef != null){
+    console.log("Requesting to view chatroom " + name + " from " + data.chatroom.name)
+  }
+  else{
+        console.log("Requesting to view chatroom " + name)
+  }
   data.changeTo = name
   if( name == null){
     data.changeTo = "default"
   }
   if( chatroomRef != null){
-    firebaseRef.off('value', chatroomRef)
+    console.log("Attempting to stop " + data.chatroom.name)
+    chatroomRef.off('value', updateChatroom)
+  }
+  else{
+    console.warn("Not attempting to stop")
   }
   data.chatroom = null
-  chatroomRef = firebaseRef.child("chatrooms/" + data.changeTo ).on('value', updateChatroom)
+  console.log("Requesting new chatroom")
+  chatroomRef = firebaseRef.child("chatrooms/" + data.changeTo );
+  chatroomRef.on('value', updateChatroom)
+  
 }
 
 //If you submit text you do not need to call stopped Typing

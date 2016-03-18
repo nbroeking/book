@@ -9,8 +9,6 @@ class ChatContent extends React.Component {
       // Display the current chat boxes
       var chats = Object.keys(curRoom.chats).map(function(p, i){
         var chatEntry = curRoom.chats[p]
-        console.log("chatEntry", chatEntry)
-        console.log("other", i)
         
         if( chatEntry.isTyping == 0){
         return (
