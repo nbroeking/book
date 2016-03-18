@@ -172,7 +172,7 @@ actions.changeToChatroom = function(name){
 //If you submit text you do not need to call stopped Typing
 actions.submit = function(messageRef, text, attachment){
   
-  if( messageRef == null){
+  if(messageRef == null){
     console.warn("Can not submit message that doesnt exist ");
     return null;
   }
@@ -226,18 +226,24 @@ actions.stoppedTyping = function(messegeRef){
   return null;
 }
 
-actions.upVoteMsg = function(msgRef, value){
-   msgRef.update({
-    score: value, 
+actions.upVoteMsg = function(chatEntry){
+  console.log("upvote called")
+
+  var chatRef = firebaseRef.child("chatrooms/"+data.chatroom.name+"/chats/" + chatEntry.id)
+  chatRef.update({
+    score:chatEntry.score+1
   });
-  return msgRef
+  render();
 }
 
-actions.downVoteMsg = function(msgid, value){
-  msgRef.update({
-    score: value, 
+actions.downVoteMsg = function(chatEntry){
+  console.log("downvote called")
+
+  var chatRef = firebaseRef.child("chatrooms/"+data.chatroom.name+"/chats/" + chatEntry.id)
+  chatRef.update({
+    score:chatEntry.score-1
   });
-  return msgid
+  render();
 }
 
 actions.changepage = function(page){
