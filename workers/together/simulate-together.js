@@ -117,9 +117,10 @@ function simulate(){
                 isTyping:0,
                 userName: person.name,
                 profilePic: person.profilePic,
-                attachment: randAttachment()
+                attachment: 0
             });
 
+            //attachment: randAttachment()
             setTimeout(function(){
                 logout(person);
             }, 1000);
@@ -164,5 +165,5 @@ function clear(){
 clear();
 
 // run every half second
-setInterval(simulate, 5000);
-setInterval(clear, 10000000); //Clear the database out every 100000 seconds
+setInterval(simulate, 10000);
+setInterval(clear, 1000000); //Clear the database out every 100000 seconds

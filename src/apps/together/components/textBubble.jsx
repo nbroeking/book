@@ -7,20 +7,20 @@ class TextBubble extends React.Component {
         return (
           <div className="chip textbubble">
             <div className = "row">
-  	          <div className = "col s10">
-  		          <img src={this.props.profilePic} alt="Contact Person"></img>
-  		          {this.props.text}
-  	          </div>
-  	          <div className = "col s2 grey-text lighten-2">
+              <div className = "col s10">
+                <img src={this.props.profilePic} alt="Contact Person"></img>
+                {this.props.text}
+              </div>
+              <div className = "col s2 grey-text lighten-2">
                 <span className="badge">
     		          {this.props.score}<i className="material-icons nomargin">thumb_up</i><i className="material-icons nomargin">thumb_down</i>
                  </span> 
-  	          </div>
+              </div>
               <br></br>
                 <div className="video-container attachment">
                   <iframe width="853" height="480" src={this.props.attachment} frameBorder="0" allowFullScreen></iframe>
                 </div>
-  	        </div>
+            </div>
           </div>
         );
       }

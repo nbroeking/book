@@ -34,16 +34,20 @@ html, body {
 }
 .btn
 {
-    width: 400px;
+    width: 150px;
     height:30px;
 }
 .fullWidth
 {
     width:100%;
 }
+.attachmentWrapper
+{   
+}
 
-.attachment
+.chat
 {
-  display: block;
-  height: 60px;
+    /*margin-left:0
+    width: 80%;
+    */
 }
