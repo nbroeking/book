@@ -117,9 +117,10 @@ function simulate(){
                 isTyping:0,
                 userName: person.name,
                 profilePic: person.profilePic,
-                attachment: randAttachment()
+                attachment: 0
             });
 
+            //attachment: randAttachment()
             setTimeout(function(){
                 logout(person);
             }, 1000);
