@@ -5,20 +5,25 @@
 html, body {
     height: 100%;    
 }
+body {
+    background-image: url("/apps/together/images/gradient-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
 
 #chatbox
 {
-    height: 300px;
+    height: 400px;
     overflow-y: auto;
 }
 #topics
 {
-    height: auto;
+    height: 160px;
     overflow-y: auto;
 }
 .textbubble
 {
-    width:100%;
+    width: 100%;
 }
 .nomargin
 {
@@ -48,4 +53,19 @@ html, body {
 {
     position: relative;
     left: 1em;
+}
+.up_down_vote
+{
+    position: absolute;
+    right: 1em;
+}
+.message
+{
+    position: absolute;
+    left: 1em;
+}
+.splash
+{
+    position: absolute;
+    top: 3em;
 }

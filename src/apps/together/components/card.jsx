@@ -7,7 +7,7 @@ class Card extends React.Component {
       console.log(this.props)
 
       return (
-        <div className="card grey">
+        <div className="card black">
           <div className="card-content white-text">
             <span className="card-title">{this.props.title}</span>
             <div className="white black-text">
@@ -22,7 +22,7 @@ class Card extends React.Component {
     }
     else{
      return (
-        <div className="card grey">
+        <div className="card black">
           <div className="card-content white-text">
             <span className="card-title">{this.props.title}</span>
             <div className="white black-text">

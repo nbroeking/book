@@ -99,19 +99,19 @@ class Users extends React.Component {
     console.log(this.props.data)
     return (
       <div className="row userRow">
-        <div className="col s4">
+        <div className="col s4 white-text">
           <h3>Users</h3>
           <ul>
             <MyComponents.UserList data={this.props.data} actions={this.props.actions}/>
           </ul>
         </div>
-        <div className="col s4">
+        <div className="col s4 white-text">
           <h3>Admins</h3>
           <ul>
             <MyComponents.AdminList data={this.props.data} actions={this.props.actions}/>
           </ul>
         </div>
-        <div className="col s4">
+        <div className="col s4 white-text">
           <h3>Banned</h3>
           <ul>
             <MyComponents.BannedList data={this.props.data} actions={this.props.actions}/>

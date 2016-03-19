@@ -6,8 +6,8 @@ class TextBubble extends React.Component {
       if(this.props.attachment){
         return (
           <div className="chip textbubble">
-            <div className = "row">
-              <div className = "col s10">
+            <div className="row">
+              <div className="message">
                 <img src={this.props.profilePic} alt="Contact Person"></img>
                 {this.props.text}
               </div>
@@ -28,7 +28,7 @@ class TextBubble extends React.Component {
         return (
           <div className="chip textbubble">
             <div className="row">
-              <div className="col s9">
+              <div className="message">
                 <img src={this.props.profilePic} alt="Contact Person"></img>
                 {this.props.text}
               </div>
