@@ -1,5 +1,5 @@
 .full {
-    height:80%;
+    height: 80%;
 }
 
 html, body {
@@ -8,12 +8,12 @@ html, body {
 
 #chatbox
 {
-    height:300px;
+    height: 300px;
     overflow-y: auto;
 }
 #topics
 {
-    height:300px;
+    height: auto;
     overflow-y: auto;
 }
 .textbubble
@@ -35,19 +35,17 @@ html, body {
 .btn
 {
     width: 150px;
-    height:30px;
+    height: 30px;
 }
 .fullWidth
 {
-    width:100%;
+    width: 100%;
 }
 .attachmentWrapper
 {   
 }
-
-.chat
+.brand-logo
 {
-    /*margin-left:0
-    width: 80%;
-    */
+    position: relative;
+    left: 1em;
 }

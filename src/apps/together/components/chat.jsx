@@ -3,7 +3,7 @@ class ChatContent extends React.Component {
 
     var curRoom = this.props.data.chatroom;
     var actions = this.props.actions
-    if( curRoom){
+    if(curRoom && (curRoom.chats != null)){
     
       console.log("chatroom", curRoom)  
       // Display the current chat boxes
@@ -14,25 +14,27 @@ class ChatContent extends React.Component {
         if( chatEntry.isTyping == 0){
         return (
           <MyComponents.TextBubble 
-          key={i} 
-          score={chatEntry.score} 
-          text={chatEntry.userName + ": " + chatEntry.text} 
-          attachment={chatEntry.attachment} 
-          profilePic={chatEntry.profilePic} 
-          actions={actions} 
-          chatEntry={chatEntry}/>
+            key={i} 
+            score={chatEntry.score} 
+            text={chatEntry.userName + ": " + chatEntry.text} 
+            attachment={chatEntry.attachment} 
+            profilePic={chatEntry.profilePic} 
+            actions={actions} 
+            chatEntry={chatEntry}
+          />
           );
         }
         else{
           return(
           <MyComponents.TextBubble 
-          key={i} 
-          score={chatEntry.score} 
-          text={chatEntry.userName + " is typing ..." } 
-          attachment={chatEntry.attachment} 
-          profilePic={chatEntry.profilePic} 
-          actions={actions} 
-          chatEntry={chatEntry}/>
+            key={i} 
+            score={chatEntry.score} 
+            text={chatEntry.userName + " is typing ..." } 
+            attachment={chatEntry.attachment} 
+            profilePic={chatEntry.profilePic} 
+            actions={actions} 
+            chatEntry={chatEntry}
+          />
           );
         }
       })
@@ -64,9 +66,10 @@ class Chat extends React.Component {
         <div>
           <MyComponents.Card 
           title={this.props.data.chatroom.name} 
-          content={<MyComponents.ChatContent 
-            data={this.props.data} 
-            actions={this.props.actions}
+          content={
+            <MyComponents.ChatContent 
+              data={this.props.data} 
+              actions={this.props.actions}
             />
           }
           />
@@ -78,7 +81,7 @@ class Chat extends React.Component {
         <div>
           <MyComponents.Card title={"Please choose a chatroom"} content={<MyComponents.ChatContent data={this.props.data} actions={this.props.actions}/>}/>
         </div>
-        );
+      );
     }
     
   }

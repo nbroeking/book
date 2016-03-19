@@ -151,8 +151,16 @@ actions.logout = function(){
 actions.createChatroom = function(name){
   
   console.log("Should Create a chatroom in the firebase" + name)
-  var room = firebaseRef.child("chatroomNames/" + name)
-  room.set(name)
+  var roomName = firebaseRef.child("chatroomNames/" + name)
+  var chatroomRef = firebaseRef.child("chatrooms/" + name)
+  console.log("chatroomRef: " + chatroomRef);
+  chatroomRef.set({
+    chats: [],
+    name: name
+  });
+
+  roomName.set(name)
+
   render()
 }
 
@@ -161,11 +169,12 @@ actions.changeToChatroom = function(name){
     console.log("Requesting to view chatroom " + name + " from " + data.chatroom.name)
   }
   else{
-        console.log("Requesting to view chatroom " + name)
+    console.log("Requesting to view chatroom " + name)
   }
   data.changeTo = name
   if( name == null){
     data.changeTo = "default"
+    console.log("chatroom name is null")
   }
   if( chatroomRef != null){
     console.log("Attempting to stop " + data.chatroom.name)

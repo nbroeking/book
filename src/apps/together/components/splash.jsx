@@ -10,7 +10,7 @@ class Splash extends React.Component {
         <div className="row">
           <div className="col s4 offset-s4">
             <form className="card">
-              <span className="card-title">Login to ChattyKathy</span>
+              <span className="card-title">Login to ChattyCathy</span>
               <p></p>
               <span onClick={this.props.actions.login} className="waves-effect waves-light btn">Login</span>
             </form>
