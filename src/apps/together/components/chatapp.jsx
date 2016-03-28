@@ -8,26 +8,22 @@ class ChatApp extends React.Component {
           actions={this.props.actions}
           user={this.props.data.user}
         />
-        <div>
-          <br></br>
-          <div className="row">
-            <div className="col s3">
-              <MyComponents.Chatrooms 
-                data={this.props.data} 
-                actions={this.props.actions}/>
-            </div>
-            <div className="col s9">
-              <MyComponents.Chat 
-                data={this.props.data} 
-                actions={this.props.actions}/>
-            </div>
+        <br></br>
+        <div className="row">
+          <div className="col s3">
+            <MyComponents.Chatrooms 
+              data={this.props.data} 
+              actions={this.props.actions}/>
           </div>
-          <div className="row">
-            <div className="col s9 offset-s3">
-              <MyComponents.Chatbox 
-                data={this.props.data} 
-                actions={this.props.actions}/>
-            </div>
+          <div className="col s9">
+            <MyComponents.Chat 
+              data={this.props.data} 
+              actions={this.props.actions}/>
+          </div>
+          <div className="col s9">
+            <MyComponents.Chatbox 
+              data={this.props.data} 
+              actions={this.props.actions}/>
           </div>
         </div>
       </div>

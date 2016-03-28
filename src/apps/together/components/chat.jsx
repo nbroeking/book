@@ -65,13 +65,13 @@ class Chat extends React.Component {
       return (
         <div>
           <MyComponents.Card 
-          title={this.props.data.chatroom.name} 
-          content={
-            <MyComponents.ChatContent 
-              data={this.props.data} 
-              actions={this.props.actions}
-            />
-          }
+            title={this.props.data.chatroom.name} 
+            content={
+              <MyComponents.ChatContent 
+                data={this.props.data} 
+                actions={this.props.actions}
+              />
+            }
           />
         </div>
         );
@@ -79,7 +79,15 @@ class Chat extends React.Component {
     else{
       return (
         <div>
-          <MyComponents.Card title={"Please choose a chatroom"} content={<MyComponents.ChatContent data={this.props.data} actions={this.props.actions}/>}/>
+          <MyComponents.Card 
+            title={"Please choose a chatroom"} 
+            content={
+              <MyComponents.ChatContent 
+                data={this.props.data} 
+                actions={this.props.actions}
+              />
+            }
+          />
         </div>
       );
     }
