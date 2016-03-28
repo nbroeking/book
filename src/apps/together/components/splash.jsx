@@ -9,12 +9,13 @@ class Splash extends React.Component {
         <div className="center-align">
           <div className="row">
             <div className="col s4 offset-s4">
-              <form className="card black white-text">
+              <div className="card black white-text">
                 <span className="card-title">Login to ChattyCathy</span>
-                <p><br/></p>
-                <span onClick={this.props.actions.login} className="waves-effect waves-light btn">Login</span>
+                <p><br/>
+                <span onClick={this.props.actions.login} className="waves-effect waves-light btn center">Login</span>
                 <br/>
-              </form>
+                </p>
+              </div>
             </div>
           </div>
         </div>

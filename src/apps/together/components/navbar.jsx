@@ -10,7 +10,7 @@ class NavBar extends React.Component {
           <div className="col s11">
             <a href="#" className="brand-logo">Chatty Cathy</a>
             <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
-            <ul id="nav-mobile" className="right hide-on-sm-and-down">
+            <ul id="nav-mobile" className="right hide-on-small-only">
               <li><a href="#" onClick={() => func("chat")}><i className="material-icons left">chat</i> Chatrooms</a></li>
               <li><a href="#" onClick={() => func("admin")}><i className="material-icons left">supervisor_account</i> Admin</a></li>
               <li><a className="white-text" href="#"><i className="material-icons left">person</i> {this.props.data.user.userName}</a></li>
@@ -33,7 +33,7 @@ class NavBar extends React.Component {
             <div className="col s12">
               <a href="#" className="brand-logo">Chatty Cathy</a>
               <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
-              <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <ul id="nav-mobile" className="right hide-on-small-only">
                 <li><a href="#" onClick={this.props.actions.login}> Login</a></li>
               </ul>
               <ul className="side-nav" id="mobile-demo">

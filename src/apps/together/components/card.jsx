@@ -14,7 +14,7 @@ class Card extends React.Component {
               {this.props.content}
             </div>
             <div className="card-action">
-              <a className="waves-effect waves-light btn" onClick={() => func()}><i className="material-icons left">send</i>{this.props.sendButton}</a>
+              <a className="waves-effect waves-light btn button" onClick={() => func()}><i className="material-icons left">send</i>{this.props.sendButton}</a>
             </div>
           </div>
         </div>

@@ -37,10 +37,10 @@ body {
     margin-right:0;
     padding-right:0;
 }
-.btn
+.button
 {
     width: auto;
-    height: 30px;
+    height: auto;
 }
 .fullWidth
 {
