@@ -51,7 +51,7 @@ function render(){
 //
 // DATA
 //
-var firebaseRef = new Firebase('https://chattykathyucdd2.firebaseio.com')
+var firebaseRef = new Firebase('https://ucdd2bookindividual.firebaseio.com/together')
 var chatroomRef = null
 
 function updateChatroom(ref){
