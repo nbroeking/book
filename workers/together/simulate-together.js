@@ -2,7 +2,7 @@ var _ = require('lodash')
 var random_name = require('node-random-name');
 var Firebase = require('firebase');
 
-var firebaseURL = "https://chattykathyucdd2.firebaseio.com/"
+var firebaseURL = "https://ucdd2bookindividual.firebaseio.com/together"
 var radius = 0.03
 var drivers={};
 
