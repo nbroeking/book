@@ -35,8 +35,12 @@ MyComponents.BannedList = BannedList
 class AdminList extends React.Component {
   render(){
       var users = this.props.data.map(function(p,i){
-          if (p.isAdmin) {
-            var imgUrl = "images/online-" + p.isLoggedin + ".png";
+          if (p.isLoggedin) {
+            var pic = "0"
+            if( p.isLoggedin){
+              pic = "1"
+            }
+            var imgUrl = "images/online-" + pic + ".png";
             return (<div className="chip fullWidth">
                 <div className="row">
                   <div className="col s1">

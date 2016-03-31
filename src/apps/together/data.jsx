@@ -142,6 +142,9 @@ actions.logout = function(){
 
     render()
   }
+  else{
+    console.warn("No user to log out from")
+  }
 }
 
 // ================
