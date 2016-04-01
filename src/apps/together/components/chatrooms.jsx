@@ -34,11 +34,11 @@ class Content extends React.Component {
 
         if( (curChat) && name == curChat.name){
           return (
-            <a href="#!" className="collection-item active" onClick={() => func(name)}>{name}</a>
+            <a href="#!" className="collection-item active" key={name} onClick={() => func(name)}>{name}</a>
           );
         }else{
            return (
-            <a href="#!" className="collection-item" onClick={() => func(name)}>{name}</a>
+            <a href="#!" className="collection-item" key={name} onClick={() => func(name)}>{name}</a>
           );                                         
         }
       });
