@@ -25,15 +25,15 @@ of the code and as a result, you are able to add a good improvement, mark _good_
 If you only put in some minor, cosmetic changes, mark _trivial_.
 
 * New React components __Max: 4 points__
-    * [ ] Substantial: __4 points__
+    * [x] Substantial: __4 points__
     * [ ] Good: __3 points__
     * [ ] Trivial: __2 points__
 * New user actions __Max: 4 points__
     * [ ] Substantial: __4 points__
-    * [ ] Good: __3 points__
+    * [x] Good: __3 points__
     * [ ] Trivial: __2 points__
 * New styling __Max: 2 points__
-    * [ ] Good: __2 points__
+    * [x] Good: __2 points__
     * [ ] Trivial: __1 point__
 
 
@@ -41,15 +41,15 @@ If you only put in some minor, cosmetic changes, mark _trivial_.
 
 By __Monday @ 3pm, 4/4/2016__
 
-* [ ] Post a public message to [#book](https://ucdd2016.slack.com/messages/book/).
+* [x] Post a public message to [#book](https://ucdd2016.slack.com/messages/book/).
 The message should contain a link to your own enhanced version of your team's
 together app, and a one-paragraph description of your enhancement.
 
-* [ ] Post a private message to the grader, using the following template:
+* [x] Post a private message to the grader, using the following template:
 
 ```
-The total points I believe I deserve is: {{? / 10 points}}.
+The total points I believe I deserve is: {{10 / 10 points}}.
 I certify that I am making a honest self-assessment
 about my own learning this week and I understand that the
-teaching staff may opt to reassess this grade {{Your Initials}}.
+teaching staff may opt to reassess this grade {{NB}}.
 ```
